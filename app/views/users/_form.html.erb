@@ -1,7 +1,7 @@
 
 
 
-<%= simple_form_for @user do |f| %>
+<%= simple_form_for [@event,@user] do |f| %>
     <%= f.input :name %>
     <%= f.input :role %>
     <%= f.button :submit %>

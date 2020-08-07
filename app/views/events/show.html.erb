@@ -9,6 +9,7 @@
 <% enddate = Date.new(@event.ending_at.strftime("%y").to_i , @event.ending_at.strftime("%m").to_i , @event.ending_at.strftime("%d").to_i)%>
 
 
+<%= link_to "create user", new_event_user_path(@event) %>
 
 <table class="doodles">
   <tr>
@@ -18,9 +19,9 @@
     <% end %>
   </tr>
   <tr>
-    <td>50</td>
+    <td> <%= @user.name %> </td>
+    <% (startdate..enddate).count.times do %>
+       <td>50</td>
+    <% end %>
   </tr>
 </table>
-
-</body>
-</html>
