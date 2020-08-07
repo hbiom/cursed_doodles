@@ -2,4 +2,25 @@
 <p>Find me in app/views/events/show.html.erb</p>
 
 
+<h2> doodles </h2>
 
+
+<% startdate = Date.new(@event.start_time.strftime("%y").to_i , @event.start_time.strftime("%m").to_i , @event.start_time.strftime("%d").to_i) %>
+<% enddate = Date.new(@event.ending_at.strftime("%y").to_i , @event.ending_at.strftime("%m").to_i , @event.ending_at.strftime("%d").to_i)%>
+
+
+
+<table class="doodles">
+  <tr>
+    <th>Participant</th>
+    <% (startdate..enddate).each do |date| %>
+      <th><%= date.strftime("%d/%m") %></th>
+    <% end %>
+  </tr>
+  <tr>
+    <td>50</td>
+  </tr>
+</table>
+
+</body>
+</html>
