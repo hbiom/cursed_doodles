@@ -1,10 +1,14 @@
 class UsersController < ApplicationController
 
   def new
+    @event = Event.find(params[:event_id])
+
     @user = User.new
+    @user.event = @event
+
     # @user = User.new(user_params)
 
-    @event = Event.find(params[:event_id])
+    # @event = Event.find(params[:event_id])
     # @user.event_id = @event.id
     # if @user.save
     #   new_user_uptime_path(@user)
@@ -12,19 +16,17 @@ class UsersController < ApplicationController
   end
 
   def create
-    # @user = User.new
-    @user = User.new(user_params)
+    @user = User.new
     @event = Event.find(params[:event_id])
-    @user.event_id = @event.id
-    if @user.save
-      new_user_uptime_path(@user)
-    end
+    @user = User.new(user_params)
+    @user.event = @event
+    @user.save
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:name, :role, :event_id)
+    params.require(:user).permit(:name, :role)
   end
 
 end

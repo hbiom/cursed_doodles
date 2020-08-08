@@ -4,6 +4,9 @@
 
 <h2> doodles </h2>
 
+<%= @event.name %> <%= @event.place %>
+
+
 
 <% startdate = Date.new(@event.start_time.strftime("%y").to_i , @event.start_time.strftime("%m").to_i , @event.start_time.strftime("%d").to_i) %>
 <% enddate = Date.new(@event.ending_at.strftime("%y").to_i , @event.ending_at.strftime("%m").to_i , @event.ending_at.strftime("%d").to_i)%>
