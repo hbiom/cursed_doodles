@@ -1,7 +1,6 @@
 <h1>Events#show</h1>
 <p>Find me in app/views/events/show.html.erb</p>
 
-
 <h2> doodles </h2>
 
 <% startdate = Date.new(@event.start_time.strftime("%y").to_i , @event.start_time.strftime("%m").to_i , @event.start_time.strftime("%d").to_i) %>
@@ -41,9 +40,9 @@
 
         <% (startdate..enddate).each do |item| %>
               <% if date_user.include?(item) %>
-            <td> <%= "here" %></td>
+            <td> <%= fa_icon("check") %> </td>
           <% else %>
-            <td> <%= "not here" %></td>
+            <td> <%= fa_icon("times") %> </td>
           <% end %>
         <% end %>
 
@@ -60,3 +59,5 @@
     </tr>
     <% end %>
 </table>
+
+
