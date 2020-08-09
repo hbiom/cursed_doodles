@@ -17,7 +17,7 @@
 
 <table class="doodles">
   <tr>
-    <th>Participant</th>
+    <th></th>
     <% date_event = [] %>
     <% (startdate..enddate).each do |date| %>
       <th><%= date.strftime("%d/%m") %></th>
@@ -29,6 +29,7 @@
   <tr>
     <td> <%= user.name %> </td>
 
+      <% participants = {} %>
       <% user.uptimes.each do |start| %>
         <% startdate_user = Date.new(start.start_time.strftime("%y").to_i , start.start_time.strftime("%m").to_i , start.start_time.strftime("%d").to_i) %>
         <% enddate_user = Date.new(start.ending_at.strftime("%y").to_i , start.ending_at.strftime("%m").to_i , start.ending_at.strftime("%d").to_i)%>
@@ -36,7 +37,17 @@
         <% date_user = [] %>
         <%(startdate_user..enddate_user).each do |date| %>
           <% date_user << date %>
+
+<!--           <% (startdate..enddate).each do |item| %>
+            <% if date_user.include?(item) %>
+                <% participants[item] =+ 1 %>
+              <% else %>
+                <% participants[item] =+ 0 %>
+            <% end %>
+          <% end %>
         <% end %>
+
+    <%=  participants %> -->
 
         <% (startdate..enddate).each do |item| %>
               <% if date_user.include?(item) %>
@@ -45,7 +56,6 @@
             <td> <%= fa_icon("times") %> </td>
           <% end %>
         <% end %>
-
       <% end %>
 
   </tr>
