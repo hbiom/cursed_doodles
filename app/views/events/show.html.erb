@@ -9,6 +9,9 @@
 
 <%= link_to "invite a user", new_event_user_path(@event) %>
 
+
+<%= @users.last.start %>
+
 <% date_event = [] %>
  <% (startdate..enddate).each do |date| %>
       <% date_event << date %>
@@ -24,44 +27,37 @@
       <% date_event << date %>
     <% end %>
   </tr>
+    <% participants = Hash.new(0) %>
     <% unless @users.empty? %>
       <% @users.each do |user| %>
   <tr>
     <td> <%= user.name %> </td>
 
-      <% participants = {} %>
-      <% user.uptimes.each do |start| %>
-        <% startdate_user = Date.new(start.start_time.strftime("%y").to_i , start.start_time.strftime("%m").to_i , start.start_time.strftime("%d").to_i) %>
-        <% enddate_user = Date.new(start.ending_at.strftime("%y").to_i , start.ending_at.strftime("%m").to_i , start.ending_at.strftime("%d").to_i)%>
-
         <% date_user = [] %>
-        <%(startdate_user..enddate_user).each do |date| %>
+        <%(user.start..user.end).each do |date| %>
           <% date_user << date %>
-
-<!--           <% (startdate..enddate).each do |item| %>
-            <% if date_user.include?(item) %>
-                <% participants[item] =+ 1 %>
-              <% else %>
-                <% participants[item] =+ 0 %>
-            <% end %>
-          <% end %>
         <% end %>
 
-    <%=  participants %> -->
-
         <% (startdate..enddate).each do |item| %>
-              <% if date_user.include?(item) %>
-            <td> <%= fa_icon("check") %> </td>
-          <% else %>
-            <td> <%= fa_icon("times") %> </td>
+          <% date_user.include?(item) ? participants[item] += 1 : participants[item] += 0%>
+        <% end %>
+
+        <% date_user = [] %>
+          <%(user.start..user.end).each do |date| %>
+            <% date_user << date %>
+
+          <% (startdate..enddate).each do |item| %>
+            <% if date_user.include?(item) %>
+              <td> <%= fa_icon("check") %> </td>
+            <% else %>
+              <td> <%= fa_icon("times") %> </td>
+            <% end %>
           <% end %>
         <% end %>
       <% end %>
 
-  </tr>
-    <% end %>
-    <% else %>
-    <tr>
+
+  </tr> <tr>
       <td> <%= link_to "invite a user", new_event_user_path(@event) %> </td>
       <% (startdate..enddate).count.times do %>
        <td> </td>
@@ -69,5 +65,4 @@
     </tr>
     <% end %>
 </table>
-
 
