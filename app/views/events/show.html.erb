@@ -4,27 +4,59 @@
 
 <h2> doodles </h2>
 
-<%= @event.name %> <%= @event.place %>
-
-
-
 <% startdate = Date.new(@event.start_time.strftime("%y").to_i , @event.start_time.strftime("%m").to_i , @event.start_time.strftime("%d").to_i) %>
 <% enddate = Date.new(@event.ending_at.strftime("%y").to_i , @event.ending_at.strftime("%m").to_i , @event.ending_at.strftime("%d").to_i)%>
 
 
-<%= link_to "create user", new_event_user_path(@event) %>
+<%= link_to "invite a user", new_event_user_path(@event) %>
+
+<% date_event = [] %>
+ <% (startdate..enddate).each do |date| %>
+      <% date_event << date %>
+    <% end %>
+
 
 <table class="doodles">
   <tr>
     <th>Participant</th>
+    <% date_event = [] %>
     <% (startdate..enddate).each do |date| %>
       <th><%= date.strftime("%d/%m") %></th>
+      <% date_event << date %>
     <% end %>
   </tr>
+    <% unless @users.empty? %>
+      <% @users.each do |user| %>
   <tr>
-    <td> <%= @user.name %> </td>
-    <% (startdate..enddate).count.times do %>
-       <td>50</td>
-    <% end %>
+    <td> <%= user.name %> </td>
+
+      <% user.uptimes.each do |start| %>
+        <% startdate_user = Date.new(start.start_time.strftime("%y").to_i , start.start_time.strftime("%m").to_i , start.start_time.strftime("%d").to_i) %>
+        <% enddate_user = Date.new(start.ending_at.strftime("%y").to_i , start.ending_at.strftime("%m").to_i , start.ending_at.strftime("%d").to_i)%>
+
+        <% date_user = [] %>
+        <%(startdate_user..enddate_user).each do |date| %>
+          <% date_user << date %>
+        <% end %>
+
+        <% (startdate..enddate).each do |item| %>
+              <% if date_user.include?(item) %>
+            <td> <%= "here" %></td>
+          <% else %>
+            <td> <%= "not here" %></td>
+          <% end %>
+        <% end %>
+
+      <% end %>
+
   </tr>
+    <% end %>
+    <% else %>
+    <tr>
+      <td> <%= link_to "invite a user", new_event_user_path(@event) %> </td>
+      <% (startdate..enddate).count.times do %>
+       <td> </td>
+      <% end %>
+    </tr>
+    <% end %>
 </table>

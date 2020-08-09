@@ -20,7 +20,9 @@ class UsersController < ApplicationController
     @event = Event.find(params[:event_id])
     @user = User.new(user_params)
     @user.event = @event
-    @user.save
+    if @user.save
+      redirect_to new_user_uptime_path(@user)
+    end
   end
 
   private

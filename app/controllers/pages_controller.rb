@@ -4,6 +4,7 @@ class PagesController < ApplicationController
     # @event = Event.new
     # @event = Event.new(event_params)
     # @event.save
+    @events = Event.all
   end
 
   # def event_params

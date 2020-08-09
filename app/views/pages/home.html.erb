@@ -6,3 +6,9 @@
 <%= link_to "create and find date for an event", new_event_path %>
 
 
+<% @events.each do |event| %>
+  <ul>
+    <li> <%= link_to event.name, event_path(event)  %> (<%= event.start_time.strftime("%d/%m/%y") %> - <%= event.ending_at.strftime("%d/%m/%y") %>) </li>
+
+  </ul>
+<% end %>
