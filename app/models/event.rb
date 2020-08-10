@@ -1,11 +1,6 @@
 class Event < ApplicationRecord
   has_many :users
 
-
-
-
-
-
   def start_event
     Date.new(self.start_time.strftime("%y").to_i , self.start_time.strftime("%m").to_i , self.start_time.strftime("%d").to_i)
   end
@@ -25,7 +20,11 @@ class Event < ApplicationRecord
       end
 
       (self.start_event..self.end_event).each do |item|
-        date_user.include?(item) ? participants[item] += 1 : participants[item] += 0
+        if date_user.empty?
+          participants[item] = 0
+        else
+          date_user.include?(item) ? participants[item] += 1 : participants[item] += 0
+        end
       end
     end
     participants

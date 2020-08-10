@@ -17,10 +17,27 @@ class UsersController < ApplicationController
     end
   end
 
+  def create_orga
+    @event = Event.find(params[:id])
+
+    @user = User.new
+    @user.event = @event
+    @user = User.new(user_params_orga)
+    @user.role = "organisator"
+
+    if @user.save
+      redirect_to new_user_uptime_path(@user)
+    end
+  end
+
   private
 
   def user_params
     params.require(:user).permit(:name, :role)
+  end
+
+  def user_params_orga
+    params.permit(:user).permit(:name, :role)
   end
 
 end

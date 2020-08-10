@@ -1,12 +1,9 @@
-<h1>Events#show</h1>
-<p>Find me in app/views/events/show.html.erb</p>
 
-<h2> doodles </h2>
+
+<h2> <%= @event.name %> </h2>
+<%= @event.place %>
 
 <%= link_to "invite a user", new_event_user_path(@event) %>
-
-
-<%= @users.last.start %>
 
 <% date_event = [] %>
  <% (@event.start_event..@event.end_event).each do |date| %>
@@ -25,12 +22,11 @@
     <% end %>
   </tr>
     <tr>
-      <td> Participants </td>
+      <td> <%= @event.users.count %> Participants </td>
       <% @event.participants.each do |date, number| %>
-        <td> <%= number  %> </td>
+        <td> <%= fa_icon("check") %> <%= number %> </td>
       <% end %>
     </tr>
-
     <% unless @users.empty? %>
       <% @users.each do |user| %>
   <tr>
