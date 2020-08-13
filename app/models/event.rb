@@ -1,6 +1,9 @@
 class Event < ApplicationRecord
   has_many :users
 
+  attr_writer :current_step
+
+
   def start_event
     Date.new(self.start_time.strftime("%y").to_i , self.start_time.strftime("%m").to_i , self.start_time.strftime("%d").to_i)
   end
@@ -30,4 +33,28 @@ class Event < ApplicationRecord
     participants
   end
 
+  def next_step
+    self.current_step = steps[steps.index(current_step) + 1]
+  end
+
+  def previous_step
+    self.current_step = steps[steps.index(current_step) - 1]
+  end
+
+
+  def steps
+    %w[name time]
+  end
+
+  def current_step
+    @current_step || steps.first
+  end
+
+  def first_step?
+    self.current_step == steps.first
+  end
+
+  def last_step?
+    self.current_step == steps.last
+  end
 end

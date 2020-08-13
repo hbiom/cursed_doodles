@@ -1,4 +1,13 @@
-<p> Step 1 to 4</p>
-<h1> What's the occasion ?</h1>
 
- <%= render "form", event: @event %>
+
+<!--
+<%= simple_form_for @event do |f| %>
+
+  <div class="form">
+    <%= render :partial => "#{@event.current_step}_step"  %>
+    <div class = "sub-button-form">
+      <%= f.button :submit, class: 'button' %>
+    </div>
+  </div>
+<% end %>
+ -->
