@@ -41,7 +41,6 @@ class Event < ApplicationRecord
     self.current_step = steps[steps.index(current_step) - 1]
   end
 
-
   def steps
     %w[name time]
   end
