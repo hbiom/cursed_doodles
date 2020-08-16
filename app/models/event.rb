@@ -3,6 +3,9 @@ class Event < ApplicationRecord
 
   attr_writer :current_step
 
+  validates :start_time, presence: true
+  validates :ending_at,  presence: true
+
 
   def start_event
     Date.new(self.start_time.strftime("%y").to_i , self.start_time.strftime("%m").to_i , self.start_time.strftime("%d").to_i)
@@ -33,6 +36,14 @@ class Event < ApplicationRecord
     participants
   end
 
+  def steps
+    %w[name time]
+  end
+
+  def current_step
+    @current_step || steps.first
+  end
+
   def next_step
     self.current_step = steps[steps.index(current_step) + 1]
   end
@@ -41,13 +52,6 @@ class Event < ApplicationRecord
     self.current_step = steps[steps.index(current_step) - 1]
   end
 
-  def steps
-    %w[name time]
-  end
-
-  def current_step
-    @current_step || steps.first
-  end
 
   def first_step?
     self.current_step == steps.first

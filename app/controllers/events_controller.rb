@@ -1,14 +1,15 @@
 class EventsController < ApplicationController
   def new
     @event = Event.new
-    session[:order_params] ||= {}
+    session[:event_params] = {}
   end
 
   def create
-    session[:order_params].deep_merge!(event_params) if event_params
-    @event = Event.new(session[:order_params])
+    session[:event_params].deep_merge!(event_params) if event_params
+    @event = Event.new(session[:event_params])
 
     @event.current_step = session["current_step"]
+
     if params["back_button"]
       @event.previous_step
     elsif @event.last_step?
@@ -16,13 +17,26 @@ class EventsController < ApplicationController
     else
       @event.next_step
     end
+
     session["current_step"] = @event.current_step
-    if @event.new_record?
-      render "new"
-    else
+    #redirect_to new_event_user_path(@event)
+
+    # #raise
+    # if @event.new_record?
+    # else
+    # end
+
+    if @event.save
+      flash[:notice] = 'event saved successfully'
       redirect_to new_event_user_path(@event)
+    else
+      render "new"
+      flash[:notice] = 'User was not saved yet.'
     end
+
   end
+
+
 
   def show
     @event = Event.find(params[:id])

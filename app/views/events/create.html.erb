@@ -1,13 +1,14 @@
 
 
-<!--
-<%= simple_form_for @event do |f| %>
+<div class="page-content ">
 
-  <div class="form">
-    <%= render :partial => "#{@event.current_step}_step"  %>
-    <div class = "sub-button-form">
-      <%= f.button :submit, class: 'button' %>
+  <%= simple_form_for @event do |f| %>
+    <div class="form">
+        <%= render "#{@event.current_step}_step", :f => f  %>
+      <div class = "sub-button-form">
+        <%= f.submit "back", class: 'button', :name => "back_button" unless @event.first_step?  %>
+        <%= f.submit "continue", class: 'button' %>
+      </div>
     </div>
-  </div>
-<% end %>
- -->
+  <% end %>
+</div>
