@@ -33,7 +33,6 @@ class EventsController < ApplicationController
       render "new"
       flash[:notice] = 'User was not saved yet.'
     end
-
   end
 
 

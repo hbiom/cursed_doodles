@@ -1,50 +1,59 @@
+<div class = "edt">
+  <h1> <%= @event.name %> </h1>
+  <div>
+    <p> by <%=@event.users.first.name %></p>
+    <p> <%= ((Time.now - @event.created_at )/6000).round() %> mins ago</p>
+    <p> <%= "print" %></p>
+  </div>
 
+  <div>
+    <%= @event.place %>
+    <%= "note" %>
+  </div>
 
-<h2> <%= @event.name %> </h2>
-<%= @event.place %>
+  <%= link_to "invite a user", new_event_user_path(@event) %>
 
-<%= link_to "invite a user", new_event_user_path(@event) %>
+  <% date_event = [] %>
+   <% (@event.start_event..@event.end_event).each do |date| %>
+        <% date_event << date %>
+      <% end %>
 
-<% date_event = [] %>
- <% (@event.start_event..@event.end_event).each do |date| %>
-      <% date_event << date %>
-    <% end %>
+      <% participants = Hash.new(0) %>
 
-    <% participants = Hash.new(0) %>
-
-<table class="doodles">
-  <tr>
-    <th></th>
-    <% date_event = [] %>
-    <% (@event.start_event..@event.end_event).each do |date| %>
-      <th><%= date.strftime("%d/%m") %></th>
-      <% date_event << date %>
-    <% end %>
-  </tr>
+  <table class="doodles">
     <tr>
-      <td> <%= @event.users.count %> Participants </td>
-      <% @event.participants.each do |date, number| %>
-        <td> <%= fa_icon("check") %> <%= number %> </td>
+      <th></th>
+      <% date_event = [] %>
+      <% (@event.start_event..@event.end_event).each do |date| %>
+        <th><%= date.strftime("%d/%m") %></th>
+        <% date_event << date %>
       <% end %>
     </tr>
-    <% unless @users.empty? %>
-      <% @users.each do |user| %>
-  <tr>
-    <td> <%= user.name %> </td>
-      <% date_user = [] %>
-      <%(user.start..user.end).each do |date| %>
-        <% date_user << date %>
-      <% end %>
+      <tr>
+        <td> <%= @event.users.count %> Participants </td>
+        <% @event.participants.each do |date, number| %>
+          <td> <%= fa_icon("check") %> <%= number %> </td>
+        <% end %>
+      </tr>
+      <% unless @users.empty? %>
+        <% @users.each do |user| %>
+    <tr>
+      <td> <%= user.name %> </td>
+        <% date_user = [] %>
+        <%(user.start..user.end).each do |date| %>
+          <% date_user << date %>
+        <% end %>
 
-      <% (@event.start_event..@event.end_event).each do |item| %>
-        <% if date_user.include?(item) %>
-          <td> <%= fa_icon("check") %> </td>
-        <% else %>
-          <td> <%= fa_icon("times") %> </td>
+        <% (@event.start_event..@event.end_event).each do |item| %>
+          <% if date_user.include?(item) %>
+            <td> <%= fa_icon("check") %> </td>
+          <% else %>
+            <td> <%= fa_icon("times") %> </td>
+          <% end %>
         <% end %>
       <% end %>
-    <% end %>
-  </tr>
-    <% end %>
-</table>
+    </tr>
+      <% end %>
+  </table>
+</div>
 

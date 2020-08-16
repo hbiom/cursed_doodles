@@ -2,7 +2,19 @@
 
 
 <%= simple_form_for [@user,@uptime] do |f| %>
-    <%= f.input :start_time, as: :date, html5: true %>
-    <%= f.input :ending_at, as: :date, html5: true %>
-    <%= f.button :submit %>
+  <div class="form">
+    <div class="form-container">
+      <%= f.input :start_time, as: :date, html5: true %>
+    </div>
+    <div class="form-container">
+      <%= f.input :ending_at, as: :date, html5: true %>
+    </div>
+    <div class="sub-button-form">
+      <%= f.button :submit, class: 'button' %>
+    </div>
+  </div>
 <% end %>
+
+
+
+
