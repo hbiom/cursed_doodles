@@ -1,7 +1,37 @@
+
+h1 {
+  text-align:center;
+}
+
+
+
 table, th, td {
   border: 1px solid black;
 }
 
 body {
   background-color: rgb(240, 240, 240);
+}
+
+
+table.doodles {
+  margin-left:auto;
+  margin-right:auto;
+}
+
+
+.edt-header{
+  display: flex;
+  justify-content:center;
+
+
+  .fa-circle {
+    padding: 5px;
+    font-size: 5px;
+    padding-bottom: 2px;
+  }
+}
+
+.edt-info {
+  padding-left:200px;
 }

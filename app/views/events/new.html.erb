@@ -7,13 +7,12 @@
     <div class="form">
         <%= render "#{@event.current_step}_step", :f => f  %>
       <div class = "sub-button-form">
-        <%= f.submit "back", class: 'button', :name => "back_button" unless @event.first_step?  %>
+        <%= f.submit "back", class: 'back', :name => "back_button" unless @event.first_step?  %>
         <%= f.submit "continue", class: 'button' %>
       </div>
     </div>
   <% end %>
 </div>
-
 
 
 

@@ -4,8 +4,9 @@
   border: solid rgba(106, 118, 133,1) 1px;
   color: rgba(106, 118, 133,1);
   font-weight: bold;
-  padding:10px;
+  padding:8px 0px;
   font-size: 16px;
+  width: 100px;
 }
 
 
@@ -15,8 +16,30 @@
   border: solid rgba(106, 118, 133,1) 1px;
   color: rgba(106, 118, 133,0.8);
   font-weight: bold;
-  padding:10px;
+  padding:8px 0px;
   font-size: 16px;
 }
+
+.back {
+  background-color: white;
+  border: solid rgba(106, 118, 133,1) 1px;
+  color: rgba(106, 118, 133,1);
+  font-weight: bold;
+  padding:8px 0px;
+  margin-right: 20px;
+  font-size: 16px;
+}
+
+
+
+.back:hover {
+  background-color: rgba(106, 118, 133,0.1);
+  border: solid rgba(106, 118, 133,1) 1px;
+  color: rgba(106, 118, 133,0.8);
+  font-weight: bold;
+  padding:8px 0px;
+  font-size: 16px;
+}
+
 
 

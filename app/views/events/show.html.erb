@@ -1,17 +1,16 @@
 <div class = "edt">
   <h1> <%= @event.name %> </h1>
-  <div>
-    <p> by <%=@event.users.first.name %></p>
-    <p> <%= ((Time.now - @event.created_at )/6000).round() %> mins ago</p>
+  <div class = "edt-header">
+    <p> by <%=@event.users.first.name %> <%= fa_icon("circle") %>  </p>
+    <p> <%= ((Time.now - @event.created_at )/6000).round() %> mins ago <%= fa_icon("circle") %>  </p>
     <p> <%= "print" %></p>
   </div>
 
-  <div>
-    <%= @event.place %>
-    <%= "note" %>
+  <div class = "edt-info">
+    <p> <%= @event.place %></p>
+    <p> <%= "note" %> </p>
   </div>
 
-  <%= link_to "invite a user", new_event_user_path(@event) %>
 
   <% date_event = [] %>
    <% (@event.start_event..@event.end_event).each do |date| %>
@@ -55,5 +54,6 @@
     </tr>
       <% end %>
   </table>
+  <%= link_to "invite a user", new_event_user_path(@event) %>
 </div>
 
