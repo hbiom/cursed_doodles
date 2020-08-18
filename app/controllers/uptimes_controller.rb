@@ -10,9 +10,7 @@ class UptimesController < ApplicationController
     @user = User.find(params[:user_id])
     @uptime = Uptime.new(uptime_params)
 
-    #@event = Event.where("id = '#{@user.event_id}'")
     @event = Event.find_by_id(@user.event_id)
-    #@event = Event.find(params[@user.event_id])
     @uptime.user = @user
 
     if @uptime.save
@@ -26,3 +24,7 @@ class UptimesController < ApplicationController
     params.require(:uptime).permit(:start_time, :ending_at)
   end
 end
+
+
+
+

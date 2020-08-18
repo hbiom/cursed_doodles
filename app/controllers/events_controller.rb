@@ -19,23 +19,15 @@ class EventsController < ApplicationController
     end
 
     session["current_step"] = @event.current_step
-    #redirect_to new_event_user_path(@event)
-
-    # #raise
-    # if @event.new_record?
-    # else
-    # end
 
     if @event.save
       flash[:notice] = 'event saved successfully'
-      redirect_to new_event_user_path(@event)
+      redirect_to create_orga_path(@event)
     else
       render "new"
       flash[:notice] = 'User was not saved yet.'
     end
   end
-
-
 
   def show
     @event = Event.find(params[:id])
