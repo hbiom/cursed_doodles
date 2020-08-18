@@ -23,6 +23,8 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'simple_form'
 gem 'font-awesome-rails'
+gem 'bootstrap',  '~>4.3.1'
+
 
 
 # Reduces boot times through caching; required in config/boot.rb
