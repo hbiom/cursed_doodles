@@ -7,21 +7,37 @@
   width: 640px;
 }
 
-  .form-container {
-    padding:10px;
-    display: flex;
-    justify-content: space-around;
-    vertical-align: middle;
+.form-container {
+  padding: 10px 0px;
+  display: flex;
+
+  div {
+    padding-left: 15px;
+  }
 
   input {
-    padding:10px;
+    padding: 15px;
     width: 600px;
     border: none;
     border-bottom: 1px solid gray;
-    box-sizing: border-box;
     height: 0px;
   }
 }
+
+.form-container-note {
+  padding: 10px 0px;
+  display: flex;
+
+  div {
+    padding-left: 15px;
+  }
+
+  textarea {
+    width: 600px;
+    border: 1px solid #555;
+  }
+}
+
 
 .sub-button-form {
   display:flex;
@@ -29,10 +45,3 @@
   margin-top: 20px;
   width:100%;
 }
-
-
-  // i {
-  //   width:100px;
-  //   vertical-align: middle;
-  //   color: rgb(59, 91, 152);
-  // }
