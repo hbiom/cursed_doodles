@@ -33,8 +33,10 @@
   }
 
   textarea {
+    padding: 15px;
     width: 600px;
-    border: 1px solid #555;
+    border: none;
+    border: 1px solid gray;
   }
 }
 
