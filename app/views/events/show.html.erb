@@ -7,9 +7,23 @@
   </div>
 
   <div class = "edt-info">
-    <p> <%= @event.place %></p>
-    <p> <%= "note" %> </p>
+   <div class="edt-info-container">
+      <p> <i class="fas fa-map-marker" style="color:gray"></i> </p> <p> <%= @event.place %></p>
+    </div>
+   <div class="edt-info-container">
+      <p> <i class="fas fa-align-justify" style="color:gray"></i> </p> <p> <%= @event.note %> </p>
+    </div>
   </div>
+
+
+
+
+
+
+
+
+
+
 
 
   <% date_event = [] %>
