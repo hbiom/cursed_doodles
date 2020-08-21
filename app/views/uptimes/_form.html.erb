@@ -1,7 +1,7 @@
 
 
 
-<%= simple_form_for [@user,@uptime] do |f| %>
+<%= simple_form_for ([@user,@uptime]) do |f| %>
   <div class="form">
     <div class="form-container">
       <%= f.input :start_time, as: :date, html5: true %>
@@ -14,7 +14,5 @@
     </div>
   </div>
 <% end %>
-
-
 
 

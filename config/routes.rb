@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 end
 
   resources :user, only: [:new, :create] do
-    resources :uptimes, only: [:new]
+    resources :uptimes, only: [:new, :create]
   end
 
   resources :events, only: [:show]
@@ -19,6 +19,8 @@ end
 
 
 end
+
+
 
 
 
