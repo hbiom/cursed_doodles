@@ -1,8 +1,8 @@
 <div class = "edt">
   <h1> <%= @event.name %> </h1>
   <div class = "edt-header">
-    <p> by <%=@event.users.first.name %> <%= fa_icon("circle") %>  </p>
-    <p> <%= ((Time.now - @event.created_at )/6000).round() %> mins ago <%= fa_icon("circle") %>  </p>
+    <p> by <%=@event.users.first.name %> </p> <p> <i class="fas fa-circle" style="color:gray;font-size:10px"> </span> </i></p>
+    <p> <%= ((Time.now - @event.created_at )/6000).round() %> mins ago<p> <i class="fas fa-circle" style="color:gray;font-size:10px"> </span> </i></p>
     <p> <%= "print" %></p>
   </div>
 
@@ -31,7 +31,7 @@
       <tr>
         <td> <%= @event.users.count %> Participants </td>
         <% @event.participants.each do |date, number| %>
-          <td> <%= fa_icon("check") %> <%= number %> </td>
+          <td> <i class="fas fa-check"></i> <%= number %> </td>
         <% end %>
       </tr>
       <% unless @users.empty? %>
@@ -45,9 +45,9 @@
 
         <% (@event.start_event..@event.end_event).each do |item| %>
           <% if date_user.include?(item) %>
-            <td> <%= fa_icon("check") %> </td>
+            <td> <i class="fas fa-check"></i> </td>
           <% else %>
-            <td> <%= fa_icon("times") %> </td>
+            <td> <i class="fas fa-times"></i> </td>
           <% end %>
         <% end %>
       <% end %>
@@ -57,3 +57,8 @@
   <%= link_to "invite a user", new_event_user_path(@event) %>
 </div>
 
+
+
+
+
+<p> <i class="fas fa-circle" style="color:gray;font-size:10px"> </span> </i></p>

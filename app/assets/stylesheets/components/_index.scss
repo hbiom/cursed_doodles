@@ -5,3 +5,22 @@
 @import "container";
 @import "form";
 @import "table-doodle";
+
+
+
+
+// general setting
+
+h1 {
+  text-align:center;
+}
+
+
+table, th, td {
+  border: 1px solid black;
+}
+
+body {
+  background-color: rgb(240, 240, 240);
+}
+

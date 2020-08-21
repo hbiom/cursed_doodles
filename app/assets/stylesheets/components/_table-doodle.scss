@@ -1,17 +1,4 @@
 
-h1 {
-  text-align:center;
-}
-
-
-table, th, td {
-  border: 1px solid black;
-}
-
-body {
-  background-color: rgb(240, 240, 240);
-}
-
 
 table.doodles {
   margin-left:auto;
@@ -23,14 +10,18 @@ table.doodles {
   display: flex;
   justify-content:center;
 
-
-  .fa-circle {
-    padding: 5px;
-    font-size: 5px;
-    padding-bottom: 2px;
+  p {
+    padding-left: 10px;
   }
 }
 
 .edt-info {
   padding-left:200px;
+}
+
+
+.fa fa-circle {
+    // padding-left: 10px;
+    // padding-bottom: 2px;
+    background-size: 10px;
 }
