@@ -1,27 +1,36 @@
 
+table, th, td {
+  border: 1px solid gray;
+}
 
-table.doodles {
-  margin-left:auto;
-  margin-right:auto;
+.table-container {
+  margin: 20px;
+}
+
+.doodles {
   table-layout: fixed;
   width: 200px;
 
-
   th, td {
-  text-align: left;
+  text-align: center;
   width: 80px;
+  height: 40px;
   }
 
   .wide {
-    width: 120px;
+    width: 180px;
   }
 
   tr:first-child {
-   background: #f2f2f2;
-   height: 100px;
+    height: 100px;
+  }
+
+  td:first-child {
+    width: 180px;
+    text-align: left;
+    padding-left: 15px;
   }
 }
-
 
 .date-cells {
   display:flex;
@@ -41,3 +50,34 @@ table.doodles {
     font-size: 20px;
   }
 }
+
+
+.scroller {
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+
+.part-number {
+  color: #1944DA;
+  font-weight: bold;
+  font-size: 20px;
+
+  div {
+    display: flex;
+    align-items: center;
+  }
+}
+
+
+.nothere {
+  background-color: rgb(254, 246, 246);
+}
+
+.here {
+  background-color: rgb(206, 230, 161);
+  color: #169E1E;
+  font-weight: bold;
+  font-size: 20px;
+}
+
