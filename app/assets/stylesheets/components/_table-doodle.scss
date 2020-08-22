@@ -3,25 +3,41 @@
 table.doodles {
   margin-left:auto;
   margin-right:auto;
-}
+  table-layout: fixed;
+  width: 200px;
 
 
-.edt-header{
-  display: flex;
-  justify-content:center;
+  th, td {
+  text-align: left;
+  width: 80px;
+  }
 
-  p {
-    padding-left: 10px;
+  .wide {
+    width: 120px;
+  }
+
+  tr:first-child {
+   background: #f2f2f2;
+   height: 100px;
   }
 }
 
-.edt-info {
-  padding-left:100px;
-}
 
+.date-cells {
+  display:flex;
+  flex-direction: column;
 
-.fa fa-circle {
-    // padding-left: 10px;
-    // padding-bottom: 2px;
-    background-size: 10px;
+  p {
+    margin: 0px;
+    text-align: center;
+    font-weight: bold;
+    color:gray;
+  }
+
+  span {
+    margin: 0px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+  }
 }
