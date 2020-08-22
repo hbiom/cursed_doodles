@@ -39,10 +39,7 @@
         <td> <%= @event.users.count %> Participants </td>
         <% @event.participants.each do |date, number| %>
           <td class="part-number">
-            <div>
-              <p> <i class="fas fa-check"></i> </p>
-             <p><%= number %> </p>
-            </div>
+            <p> <i class="fas fa-check"></i> <%= number %></p>
           </td>
         <% end %>
       </tr>
