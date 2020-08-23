@@ -36,7 +36,11 @@
         <% end %>
       </tr>
       <tr>
-        <td> <%= @event.users.count %> Participants </td>
+        <td>
+          <div class = "user-cell">
+            <P> <%= @event.users.count %> </p> <p> Participants</p>
+          </div>
+        </td>
         <% @event.participants.each do |date, number| %>
           <td class="part-number">
             <p> <i class="fas fa-check"></i> <%= number %></p>
@@ -46,7 +50,11 @@
         <% unless @users.empty? %>
           <% @users.each do |user| %>
       <tr>
-        <td> <%= user.name %> </td>
+        <td>
+          <div class = "user-cell">
+           <i class="fas fa-user"></i> <%= user.name %>
+          </div>
+        </td>
           <% date_user = [] %>
           <%(user.start..user.end).each do |date| %>
             <% date_user << date %>

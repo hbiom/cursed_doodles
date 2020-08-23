@@ -1,6 +1,6 @@
 
 table, th, td {
-  border: 1px solid gray;
+  border: 1px solid #E0E0E0;
 }
 
 .table-container {
@@ -27,8 +27,6 @@ table, th, td {
 
   td:first-child {
     width: 180px;
-    text-align: left;
-    padding-left: 15px;
     height:50px;
   }
 }
@@ -52,17 +50,30 @@ table, th, td {
   }
 }
 
-
 .scroller {
   overflow-x: scroll;
   overflow-y: hidden;
 }
 
+.user-cell {
+  width:100%;
+  display:flex;
+  justify-content: space-evenly;
+  padding: 0px;
+
+  p {
+    margin:0;
+  }
+}
 
 .part-number {
   color: #1944DA;
   font-weight: bold;
   font-size: 20px;
+
+  p {
+    margin:0;
+  }
 }
 
 
