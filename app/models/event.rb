@@ -7,6 +7,7 @@ class Event < ApplicationRecord
   validates :ending_at,  presence: true
 
 
+
   def start_event
     Date.new(self.start_time.strftime("%y").to_i , self.start_time.strftime("%m").to_i , self.start_time.strftime("%d").to_i)
   end

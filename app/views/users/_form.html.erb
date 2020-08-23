@@ -6,15 +6,13 @@
 <%= simple_form_for [@event, @user] do |f| %>
   <div class="form">
     <div class="form-container">
-      <%= f.input :name %>
+      <i class="fas fa-user" style="color:gray"></i><%= f.input :name, placeholder: 'Enter name', label: false %>
     </div>
     <div class="form-container">
-      <%= f.input :role %>
+      <i class="fas fa-smile" style="color:gray"></i><%= f.input :role, placeholder: 'Enter role', label: false %>
     </div>
     <div class = "sub-button-form">
       <%= f.button :submit, class: 'button' %>
     </div>
   </div>
 <% end %>
-
-
