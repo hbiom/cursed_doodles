@@ -1,9 +1,40 @@
 
+.doodles-calendar {
+  table-layout: fixed;
+  width: 200px;
+
+  th, td {
+    text-align: center;
+    width: 100px;
+    height: 40px;
+  }
+
+  table, th, td {
+    border: 1px solid #E0E0E0;
+  }
+
+  .wide {
+    width: 180px;
+  }
+
+  tr:first-child {
+    height: 100px;
+    border-bottom: 3px solid white;
+  }
+
+  td:first-child {
+    width: 180px;
+    height:50px;
+  }
+}
+
 
 .part-number-calendar {
   color: black;
   font-weight: bold;
   font-size: 12px;
+  margin:0px;
+  padding: 0px;
 
   p {
     margin:0;

@@ -74,47 +74,50 @@
     <%= link_to "invite a user", new_event_user_path(@event) %>
   </div>
 
-
-
-<div class="table-container scroller">
-    <table class="doodles">
-      <colgroup>
-        <col span="1" class = "wide">
-      </colgroup>
-      <tr>
-        <!-- first Row with Dates -->
-        <th></th>
-        <% (@event.start_event..@event.end_event).each do |date| %>
-          <th>
-            <div class="date-cells">
-              <p> <%= date.strftime("%B") %></p>
-              <span> <%= date.strftime("%d") %> </span>
-              <p> <%= date.strftime('%a') %>.</p>
-            </div>
-          </th>
-        <% end %>
-      </tr>
-      <tr>
-        <td>
-          <div class = "user-cell">
-            <p> All day </p>
-          </div>
-        </td>
-        <% @event.participants.each do |date, number| %>
-          <td class="part-number-calendar">
-            <div class= <%= number == @users.count ? "cal-here" : "cal-nothere"  %> >
-              <% if number == @users.count %>
-                <i class="fas fa-check" style="color:#169E1E;font-weight: bold;font-size: 20px"></i>
-              <% else %>
-                <i class="fas fa-times" style="color:red;font-weight: bold;font-size: 20px"></i>
-              <% end %>
-              <p> <i class="fas fa-check"></i> <%= number %></p>
+  <div class="table-container scroller">
+      <table class="doodles-calendar">
+        <colgroup>
+          <col span="1" class = "wide">
+        </colgroup>
+        <tr>
+          <!-- first Row with Dates -->
+          <th></th>
+          <% (@event.start_event..@event.end_event).each do |date| %>
+            <th>
+              <div class="date-cells">
+                <p> <%= date.strftime("%B") %></p>
+                <span> <%= date.strftime("%d") %> </span>
+                <p> <%= date.strftime('%a') %>.</p>
+              </div>
+            </th>
+          <% end %>
+        </tr>
+        <tr>
+          <td>
+            <div class = "user-cell">
+              <p> All day </p>
             </div>
           </td>
-        <% end %>
-      </tr>
-    </table>
+          <% @event.participants.each do |date, number| %>
+            <td class="part-number-calendar">
+              <div class= <%= number == @users.count ? "cal-here" : "cal-nothere"  %> >
+                <% if number == @users.count %>
+                  <i class="fas fa-check" style="color:#169E1E;font-weight: bold;font-size: 20px"></i>
+                <% else %>
+                  <i class="fas fa-times" style="color:red;font-weight: bold;font-size: 20px"></i>
+                <% end %>
+                <p> <i class="fas fa-check"></i> <%= number %></p>
+              </div>
+            </td>
+          <% end %>
+        </tr>
+      </table>
+    </div>
   </div>
-</div>
+
+
+
+
 </div>
 
+<!-- rails effet tab -->

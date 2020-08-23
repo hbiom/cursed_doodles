@@ -1,8 +1,4 @@
 
-table, th, td {
-  border: 1px solid #E0E0E0;
-}
-
 .table-container {
   margin: 20px;
 }
@@ -11,10 +7,14 @@ table, th, td {
   table-layout: fixed;
   width: 200px;
 
+  table, th, td {
+    border: 1px solid #E0E0E0;
+  }
+
   th, td {
-  text-align: center;
-  width: 100px;
-  height: 40px;
+    text-align: center;
+    width: 100px;
+    height: 40px;
   }
 
   .wide {
@@ -76,6 +76,8 @@ table, th, td {
   }
 }
 
+
+// Cells
 
 .nothere {
   background-color: rgb(254, 246, 246);
