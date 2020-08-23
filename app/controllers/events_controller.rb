@@ -42,4 +42,3 @@ class EventsController < ApplicationController
 end
 
 
-# https://www.youtube.com/watch?v=W9aMzGF60Lw
