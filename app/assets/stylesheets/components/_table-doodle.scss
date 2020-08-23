@@ -56,13 +56,13 @@ table, th, td {
 }
 
 .user-cell {
+  padding-left: 20px;
   width:100%;
   display:flex;
-  justify-content: space-evenly;
-  padding: 0px;
 
   p {
     margin:0;
+    margin-left: 10px;
   }
 }
 

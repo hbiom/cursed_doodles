@@ -1,0 +1,18 @@
+
+<div class="header">
+  <p></p>
+  <h1> Who are your participants ? </h1>
+</div>
+<%= simple_form_for [@event, @user] do |f| %>
+  <div class="form">
+    <div class="form-container">
+      <%= f.input :name %>
+    </div>
+    <div class="form-container">
+      <%= f.input :role %>
+    </div>
+    <div class = "sub-button-form">
+      <%= f.button :submit, class: 'button' %>
+    </div>
+  </div>
+<% end %>

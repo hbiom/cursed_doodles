@@ -1,5 +1,5 @@
 <div class = "edt">
-  <h1> <%= @event.name %> </h1>
+  <h1> <%= @event.name.capitalize() %> </h1>
   <div class = "edt-header">
     <p> by <%=@event.users.first.name %> </p> <p> <i class="fas fa-circle" style="color:gray;font-size:10px"> </span> </i></p>
     <p> <%= ((Time.now - @event.created_at )/6000).round() %> mins ago<p> <i class="fas fa-circle" style="color:gray;font-size:10px"> </span> </i></p>
@@ -38,7 +38,7 @@
       <tr>
         <td>
           <div class = "user-cell">
-            <P> <%= @event.users.count %> </p> <p> Participants</p>
+            <span> <%= @event.users.count %> </span> <p> Participants</p>
           </div>
         </td>
         <% @event.participants.each do |date, number| %>
@@ -52,7 +52,7 @@
       <tr>
         <td>
           <div class = "user-cell">
-           <i class="fas fa-user"></i> <%= user.name %>
+           <i class="fas fa-user"></i> <p><%= user.name.capitalize() %></p>
           </div>
         </td>
           <% date_user = [] %>
@@ -74,8 +74,6 @@
     <%= link_to "invite a user", new_event_user_path(@event) %>
   </div>
 </div>
-
-
 
 
 

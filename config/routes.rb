@@ -6,21 +6,13 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create]
 end
 
-  resources :user, only: [:new, :create] do
+  resources :users, only: [] do
     resources :uptimes, only: [:new, :create]
   end
 
   resources :events, only: [:show]
 
-    # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   get "events/:id/create_orga", to: "users#create_orga", as: "create_orga"
 
-  #get "uptimes/:id/new", to: "uptime#new", as: "create_uptime"
-
-
 end
-
-
-
-
-
