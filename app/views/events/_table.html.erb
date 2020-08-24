@@ -1,0 +1,56 @@
+  <div class="table-container scroller">
+    <table class="doodles">
+      <colgroup>
+        <col span="1" class = "wide">
+      </colgroup>
+      <tr>
+        <!-- first Row with Dates -->
+        <th></th>
+        <% (@event.start_event..@event.end_event).each do |date| %>
+          <th>
+            <div class="date-cells">
+              <p> <%= date.strftime("%B") %></p>
+              <span> <%= date.strftime("%d") %> </span>
+              <p> <%= date.strftime('%a') %>.</p>
+            </div>
+          </th>
+        <% end %>
+      </tr>
+      <tr>
+        <td>
+          <div class = "user-cell">
+            <span> <%= @event.users.count %> </span> <p> Participants</p>
+          </div>
+        </td>
+        <% @event.participants.each do |date, number| %>
+          <td class="part-number">
+            <p> <i class="fas fa-check"></i> <%= number %></p>
+          </td>
+        <% end %>
+      </tr>
+        <% unless @users.empty? %>
+          <% @users.each do |user| %>
+      <tr>
+        <td>
+          <div class = "user-cell">
+           <i class="fas fa-user"></i> <p><%= user.name.capitalize() %></p>
+          </div>
+        </td>
+          <% date_user = [] %>
+          <%(user.start..user.end).each do |date| %>
+            <% date_user << date %>
+          <% end %>
+
+          <% (@event.start_event..@event.end_event).each do |item| %>
+            <% if date_user.include?(item) %>
+              <td class="here"> <i class="fas fa-check"></i> </td>
+            <% else %>
+              <td class="nothere"> </td>
+            <% end %>
+          <% end %>
+        <% end %>
+      </tr>
+      <% end %>
+    </table>
+    <%= link_to "invite a user", new_event_user_path(@event) %>
+  </div>
