@@ -3,7 +3,7 @@
   <div class = "edt-header">
     <p> by <%=@event.users.first.name %> </p> <p> <i class="fas fa-circle" style="color:gray;font-size:10px"> </span> </i></p>
     <p> <%= ((Time.now - @event.created_at )/6000).round() %> mins ago<p> <i class="fas fa-circle" style="color:gray;font-size:10px"> </span> </i></p>
-    <p> <%= "print" %></p>
+    <p> <%= "Print" %></p>
   </div>
 
   <div class = "edt-info">
@@ -18,7 +18,10 @@
     </div>
   </div>
 
-  <% participants = Hash.new(0) %>
+  <ul class="tabs">
+    <li><%= "Table" %></li>
+    <li><%= "Calendar" %></li>
+  </ul>
 
   <div class="table-container scroller">
     <table class="doodles">
