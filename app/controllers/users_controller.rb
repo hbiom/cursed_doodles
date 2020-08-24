@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-
   def new
     @event = Event.find(params[:event_id])
     @user = User.new
@@ -21,7 +20,7 @@ class UsersController < ApplicationController
     @user = User.new
     @user.event = @event
     @user = User.new(user_params_orga)
-    @user.role = "organisator"
+    @user.role = "Organisator"
 
     start_time_orga = @event.start_time
     ending_time_orga = @event.ending_at
