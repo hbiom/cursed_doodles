@@ -15,3 +15,13 @@ import "@fortawesome/fontawesome-free/js/all";
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+
+import { nameInputVal } from '../components/form_validation';
+
+
+
+document.addEventListener('turbolinks:load', () => {
+  // Call your JS functions here
+  nameInputVal();
+});

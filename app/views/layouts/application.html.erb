@@ -6,7 +6,8 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
   </head>
@@ -17,6 +18,5 @@
     </div>
   </body>
 </html>
-
 
 
