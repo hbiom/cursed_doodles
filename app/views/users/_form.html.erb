@@ -12,7 +12,12 @@
       <i class="fas fa-smile" style="color:gray"></i><%= f.input :role, placeholder: 'Enter role', label: false, disabled: true%>
     </div>
     <div class = "sub-button-form">
-      <%= f.button :submit, class: 'button' %>
+      <%= f.button :submit, class: @event.first_step? ? 'button' : 'buttonval',
+        id: "buttonvalformuser",
+        disabled: @event.first_step? %>
     </div>
   </div>
 <% end %>
+
+
+<!-- to do event listener on user name form -->
