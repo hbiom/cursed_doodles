@@ -18,10 +18,10 @@ import "@fortawesome/fontawesome-free/js/all";
 
 
 import { nameInputVal } from '../components/form_validation';
-
-
+import { nameuserInputVal } from '../components/form_validation_user';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your JS functions here
   nameInputVal();
+  nameuserInputVal();
 });
