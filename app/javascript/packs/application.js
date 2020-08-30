@@ -7,9 +7,9 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("channels")
 
+
+import '../components/flatpickr_event_date'
 import "@fortawesome/fontawesome-free/js/all";
-
-
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
@@ -18,12 +18,14 @@ import "@fortawesome/fontawesome-free/js/all";
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-
 import { nameInputVal } from '../components/form_validation';
 import { nameuserInputVal } from '../components/form_validation_user';
+import { flatpickr_event } from '../components/flatpickr_event_date';
+
 
 document.addEventListener('turbolinks:load', () => {
   // Call your JS functions here
   nameInputVal();
   nameuserInputVal();
+  flatpickr_event()
 });
