@@ -24,6 +24,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'simple_form'
 gem 'font-awesome-rails'
 gem 'bootstrap',  '~>4.3.1'
+gem 'flatpickr'
+gem 'flatpickr_rails'
 
 
 
