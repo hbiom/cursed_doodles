@@ -6,7 +6,7 @@
         <tr>
           <!-- first Row with Dates -->
           <th></th>
-          <% (@event.start_event..@event.end_event).each do |date| %>
+          <% (@event.start_event).each do |date| %>
             <th>
               <div class="date-cells">
                 <p> <%= date.strftime("%B") %></p>

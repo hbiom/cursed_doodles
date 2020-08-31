@@ -10,6 +10,8 @@ class EventsController < ApplicationController
 
     @event.current_step = session["current_step"]
 
+    @dates = params[:event][:start_time]
+
     if params["back_button"]
       @event.previous_step
     elsif @event.last_step?
@@ -40,5 +42,8 @@ class EventsController < ApplicationController
     params.require(:event).permit(:name, :place, :note, :start_time, :ending_at)
   end
 end
+
+
+
 
 

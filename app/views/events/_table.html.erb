@@ -6,7 +6,7 @@
       <tr>
         <!-- first Row with Dates -->
         <th></th>
-        <% (@event.start_event..@event.end_event).each do |date| %>
+        <% (@event.start_event).each do |date| %>
           <th>
             <div class="date-cells">
               <p> <%= date.strftime("%B") %></p>
@@ -41,7 +41,7 @@
             <% date_user << date %>
           <% end %>
 
-          <% (@event.start_event..@event.end_event).each do |item| %>
+          <% (@event.start_event).each do |item| %>
             <% if date_user.include?(item) %>
               <td class="here"> <i class="fas fa-check"></i> </td>
             <% else %>
