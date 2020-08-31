@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_31_165640) do
+ActiveRecord::Schema.define(version: 2020_08_31_184522) do
 
   create_table "events", force: :cascade do |t|
     t.string "name"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2020_08_31_165640) do
   end
 
   create_table "uptimes", force: :cascade do |t|
-    t.datetime "start_time"
+    t.string "start_time"
     t.datetime "ending_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

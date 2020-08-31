@@ -29,8 +29,6 @@ class Event < ApplicationRecord
     end
   end
 
-
-
   def participants
 
     participants = Hash.new(0)

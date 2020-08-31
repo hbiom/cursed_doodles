@@ -1,7 +1,3 @@
-
-
-
-
 const flatpickr_event = () => {
   const dates = document.getElementById("start_date");
 
@@ -9,45 +5,33 @@ const flatpickr_event = () => {
     console.log("flapicker here");
     var inputVal = document.getElementById("start_date").value;
 
-    const fp = flatpickr("#start_date", {
+    flatpickr("#start_date", {
       altInput: true,
       mode: "multiple",
       dateFormat: "Y-m-d",
       minDate: "today",
-
-      // onChange: function(dates_event) {
-      //   var event_dates = []
-      //   if (dates_event) {
-      //     event_dates.push(dates);
-      //   }
-      //   event_dates
-      // }
-
-      // onChange: function (selectedDates, dateStr, instance) {
-      //   dates.submit();
-      // }
-
     });
-    fp.selectedDates
   }
-}
+};
 
+const flatpickr_user = () => {
+  const dates_user = document.getElementById("start_date_user");
 
+  if (dates_user) {
+    console.log("flapicker here for uptimes");
+    var inputVal = document.getElementById("start_date_user").value;
 
-
-
-
-
-
-
-
-
-
-
-
-
+    flatpickr("#start_date_user", {
+      altInput: true,
+      mode: "multiple",
+      dateFormat: "Y-m-d",
+      minDate: "today",
+    });
+  }
+};
 
 
 export { flatpickr_event };
+export { flatpickr_user };
 
 

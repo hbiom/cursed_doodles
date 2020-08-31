@@ -4,15 +4,12 @@
 <%= simple_form_for ([@user,@uptime]) do |f| %>
   <div class="form">
     <div class="form-container">
-      <%= f.input :start_time, as: :date, html5: true %>
+      <%= f.input :start_time, as: :date, html5: true, input_html: { id: "start_date_user" } %>
     </div>
-    <div class="form-container">
-      <%= f.input :ending_at, as: :date, html5: true %>
-    </div>
+
     <div class="sub-button-form">
       <%= f.submit "continue", class: 'button' %>
     </div>
   </div>
 <% end %>
-
 
