@@ -19,7 +19,7 @@
       <tr>
         <td>
           <div class = "user-cell">
-            <p> <%= pluralize @event.users.count, "participants"  %></p>
+            <p> <%= pluralize @event.users.count, "participant"  %></p>
           </div>
         </td>
         <% @event.participants.each do |date, number| %>
