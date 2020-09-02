@@ -19,12 +19,15 @@
 
   <ul class="tabs">
     <li><%= "Table" %></li>
-    <li><%= "Calendar" %></li>
+<!--     <%= button_tag "calendar", :name => 'table_calendar' %>
+ -->    <li><%= "Calendar" %></li>
   </ul>
 
-<%= render "table" %>
-<%= render "calendar" %>
-
+  <% if params[:table_calendar]  %>
+    <%= render "calendar" %>
+  <% else %>
+    <%= render "table" %>
+  <% end %>
 
 </div>
 
