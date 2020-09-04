@@ -8,7 +8,7 @@
         <%= render "#{@event.current_step}_step", :f => f  %>
       <div class = "sub-button-form">
         <%= f.submit "back", class: 'back', label: false, :name => "back_button" unless @event.first_step?  %>
-        <%= f.submit "Continue", class: @event.first_step? ? 'button' : 'buttonval',
+        <%= f.submit "Continue", class: 'button',
         id: "buttonvalform",
         disabled: @event.first_step? %>
       </div>

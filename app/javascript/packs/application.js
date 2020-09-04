@@ -19,7 +19,10 @@ import "@fortawesome/fontawesome-free/js/all";
 // const imagePath = (name) => images(name, true)
 
 import { nameInputVal } from '../components/form_validation';
-import { nameuserInputVal } from '../components/form_validation_user';
+import { nameuserInputVal } from '../components/form_validation';
+import { eventInputVal } from '../components/form_validation';
+
+
 import { flatpickr_event } from '../components/flatpickr_event_date';
 import { flatpickr_user } from '../components/flatpickr_event_date';
 
@@ -30,4 +33,5 @@ document.addEventListener('turbolinks:load', () => {
   nameuserInputVal();
   flatpickr_event()
   flatpickr_user()
+  eventInputVal()
 });
