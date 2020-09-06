@@ -12,6 +12,7 @@ class UptimesController < ApplicationController
 
     if @user.role == "Organisator"
       @uptime = Uptime.create(start_time: @event.start_time)
+      @uptime.start_time = @event.start_time
     else
       @uptime = Uptime.new(uptime_params)
     end

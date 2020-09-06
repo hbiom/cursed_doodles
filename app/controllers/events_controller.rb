@@ -9,7 +9,6 @@ class EventsController < ApplicationController
     @event = Event.new(session[:event_params])
 
     @event.current_step = session["current_step"]
-
     @dates = params[:event][:start_time]
 
     if params["back_button"]

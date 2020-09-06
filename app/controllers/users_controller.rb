@@ -13,10 +13,20 @@ class UsersController < ApplicationController
     @user.save
 
     if @user.save
-      redirect_to new_user_uptime_path(@user)
+      if @user.role == "Organisator"
+        @uptime = Uptime.create!(start_time: @event.start_time, user: @user)
+        @uptime.start_time = @event.start_time
+        if @uptime.save
+          redirect_to event_path(@event)
+        end
+      else
+        @uptime = Uptime.create!(start_time: @event.start_time, user: @user)
+        if @uptime.save
+          redirect_to event_path(@event)
+        end
+      end
     end
   end
-
 
   def create_orga
     @event = Event.find(params[:id])
@@ -26,7 +36,7 @@ class UsersController < ApplicationController
     @user.role = "Organisator"
 
     if @user.save
-      redirect_to new_user_uptime_path(@user)
+      define_uptime(@user)
     end
   end
 
@@ -38,6 +48,23 @@ class UsersController < ApplicationController
 
   def user_params_orga
     params.permit(:user).permit(:name, :role)
+  end
+
+  def uptime_params
+    params.permit(:start_time, :user)
+  end
+
+
+
+
+
+  def define_uptime(user)
+    if user.role == "Organisator"
+      @uptime = Uptime.create!(start_time: @event.start_time, user: user)
+      @uptime.start_time = @event.start_time
+    else
+      @uptime = Uptime.new(uptime_params)
+    end
   end
 
 end
