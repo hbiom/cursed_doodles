@@ -10,10 +10,13 @@ class UsersController < ApplicationController
     @event = Event.find(params[:event_id])
     @user = User.new(user_params)
     @user.event = @event
+    @user.save
+
     if @user.save
       redirect_to new_user_uptime_path(@user)
     end
   end
+
 
   def create_orga
     @event = Event.find(params[:id])
@@ -21,9 +24,6 @@ class UsersController < ApplicationController
     @user.event = @event
     @user = User.new(user_params_orga)
     @user.role = "Organisator"
-
-    start_time_orga = @event.start_time
-    ending_time_orga = @event.ending_at
 
     if @user.save
       redirect_to new_user_uptime_path(@user)

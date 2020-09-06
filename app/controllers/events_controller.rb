@@ -27,7 +27,7 @@ class EventsController < ApplicationController
       redirect_to create_orga_path(@event)
     else
       render "new"
-      flash[:notice] = 'User was not saved yet.'
+      flash[:notice] = 'event was not saved yet.'
     end
   end
 

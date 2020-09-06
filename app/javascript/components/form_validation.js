@@ -81,15 +81,3 @@ const eventInputVal = () => {
 }
 
 export { eventInputVal };
-
-
-
-// if($('#text_field').val() ==  "")
-//    $('#submitButtonId').attr('disabled', true);
-
-// $('#text_field').keyup(function(){
-//     if($('#text_field').val() !=  "")
-//          $('#submitButtonId').attr('disabled', false);
-//     else
-//          $('#submitButtonId').attr('disabled', true);
-// });
