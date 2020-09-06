@@ -21,6 +21,8 @@ import "@fortawesome/fontawesome-free/js/all";
 import { nameInputVal } from '../components/form_validation';
 import { nameuserInputVal } from '../components/form_validation';
 import { eventInputVal } from '../components/form_validation';
+// import { empty } from '../components/form_validation';
+
 
 
 import { flatpickr_event } from '../components/flatpickr_event_date';
@@ -34,4 +36,5 @@ document.addEventListener('turbolinks:load', () => {
   flatpickr_event()
   flatpickr_user()
   eventInputVal()
+  // empty()
 });

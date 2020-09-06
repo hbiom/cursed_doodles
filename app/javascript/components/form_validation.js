@@ -6,18 +6,19 @@ const nameInputVal = () => {
 
   if (nameInput) {
 
-    if (nameInput.value.length != 0) {
+    if (nameInput.value.length == 0) {
         button.className = "button";
+        button.disabled = true;
+    } else {
+        button.className = "buttonval";
         button.disabled = false;
     }
 
     nameInput.addEventListener('input', () => {
       if (nameInput.value.length == 0) {
-        console.log("0 and disable")
         button.className = "button";
         button.disabled = true;
       } else {
-        console.log("+ 0 and disabled = true")
         button.className = "buttonval";
         button.disabled = false;
       }
@@ -40,11 +41,9 @@ const nameuserInputVal = () => {
 
     username.addEventListener('input', () => {
       if (username.value.length == 0) {
-        console.log("0 and disable")
         button.className = "button";
         button.disabled = true;
       } else {
-        console.log("+ 0 and disabled = true")
         button.className = "buttonval";
         button.disabled = false;
       }
@@ -54,28 +53,26 @@ const nameuserInputVal = () => {
 
 export { nameuserInputVal };
 
-
-
 const eventInputVal = () => {
   const dateEvent = document.getElementById("start_date");
   const button = document.getElementById("buttonvalform");
 
   if (dateEvent) {
-    console.log("rekngerngpengomenrgengonrtpn");
 
-    if (dateEvent.value.length == 0) {
+    if (dateEvent.value == "") {
         button.className = "button";
         button.disabled = true;
+     } else {
+        button.className = "buttonval";
+        button.disabled = false;
     }
+
 
     dateEvent.addEventListener('input', () => {
       if (dateEvent.value.length == 0) {
-        console.log(dateEvent.value.length);
-        console.log("0 and disable");
         button.className = "button";
         button.disabled = true;
       } else {
-        console.log("+ 0 and disabled = true")
         button.className = "buttonval";
         button.disabled = false;
       }
@@ -86,13 +83,13 @@ const eventInputVal = () => {
 export { eventInputVal };
 
 
-// const empty = () => {
-//     var x;
-//     x = document.getElementById("start_date").value;
-//     if (x == "") {
-//         alert("Enter a Valid Roll Number");
-//         return false;
-//     };
-//   }
 
-// export { empty };
+// if($('#text_field').val() ==  "")
+//    $('#submitButtonId').attr('disabled', true);
+
+// $('#text_field').keyup(function(){
+//     if($('#text_field').val() !=  "")
+//          $('#submitButtonId').attr('disabled', false);
+//     else
+//          $('#submitButtonId').attr('disabled', true);
+// });
