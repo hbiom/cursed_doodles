@@ -46,6 +46,30 @@ class Event < ApplicationRecord
     participants
   end
 
+ #  def date_available
+ #    date_event = self.start_event
+
+ #    self.users.each do |user|
+ #      #unless user.role == "Organisator"
+ #        date_event = user.date_user & date_event
+ #      #end
+ #    end
+ #  date_event
+ # end
+
+  def date_available
+    date_event = self.start_event
+
+    self.users.each do |user|
+      unless user.role == "Organisator"
+        user.date_user.each do |date_user|
+          date_event.delete_at date_event.find_index(date_user)
+        end
+      end
+    end
+  date_event
+ end
+
 # form in several steps
 
 

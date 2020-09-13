@@ -13,18 +13,7 @@ class UsersController < ApplicationController
     @user.save
 
     if @user.save
-      if @user.role == "Organisator"
-        @uptime = Uptime.create!(start_time: @event.start_time, user: @user)
-        @uptime.start_time = @event.start_time
-        if @uptime.save
-          redirect_to event_path(@event)
-        end
-      else
-        @uptime = Uptime.create!(start_time: @event.start_time, user: @user)
-        if @uptime.save
-          redirect_to event_path(@event)
-        end
-      end
+      define_uptime(@user)
     end
   end
 
@@ -55,16 +44,36 @@ class UsersController < ApplicationController
   end
 
 
-
-
+  # def define_uptime(user)
+  #   if user.role == "Organisator"
+  #     @uptime = Uptime.create!(start_time: @event.start_time, user: user)
+  #     @uptime.start_time = @event.start_time
+  #   else
+  #     @uptime = Uptime.new(uptime_params)
+  #   end
+  # end
 
   def define_uptime(user)
     if user.role == "Organisator"
       @uptime = Uptime.create!(start_time: @event.start_time, user: user)
       @uptime.start_time = @event.start_time
+      if @uptime.save
+        redirect_to event_path(@event)
+      end
     else
-      @uptime = Uptime.new(uptime_params)
+      ### uptime for invite people
+      date_number = @event.date_available.size
+
+      if @event.date_available.empty?
+        user_date = ""
+      else
+        user_date = @event.date_available.sample(2).join(', ')
+      end
+
+      @uptime = Uptime.create!(start_time: user_date, user: user)
+      if @uptime.save
+        redirect_to event_path(@event)
+      end
     end
   end
-
 end
