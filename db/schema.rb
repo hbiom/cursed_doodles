@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2020_08_31_184522) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "events", force: :cascade do |t|
     t.string "name"
     t.string "place"
@@ -27,7 +30,7 @@ ActiveRecord::Schema.define(version: 2020_08_31_184522) do
     t.datetime "ending_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "user_id"
+    t.bigint "user_id"
     t.index ["user_id"], name: "index_uptimes_on_user_id"
   end
 
@@ -36,7 +39,7 @@ ActiveRecord::Schema.define(version: 2020_08_31_184522) do
     t.string "role"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "event_id"
+    t.bigint "event_id"
     t.index ["event_id"], name: "index_users_on_event_id"
   end
 
