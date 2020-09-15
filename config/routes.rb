@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root to: 'pages#home'
+root to: 'pages#home'
 
  resources :events, only: [:new, :create] do
   resources :users, only: [:new, :create]
