@@ -1,8 +1,4 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-
-
-
+<%= render 'shared/navbar' %>
 <%= link_to "create and find date for an event", new_event_path %>
 
   <% @events.each do |event| %>
@@ -12,4 +8,5 @@
   <% end %>
 
 
+    <%= render 'shared/footer' %>
 

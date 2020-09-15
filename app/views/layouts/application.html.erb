@@ -16,8 +16,10 @@
   </head>
 
   <body>
+  <% if params[:controller] == "home" %>
     <div class="container">
-      <%= yield %>
+  <% end %>
+  <%= yield %>
     </div>
   </body>
 </html>
