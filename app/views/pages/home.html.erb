@@ -1,19 +1,81 @@
 <%= render 'shared/navbar' %>
 
   <div class="font">
-    <%= link_to "create and find date for an event", new_event_path %>
+    <div class="intro">
+      <h1> Cursed planner </h1>
+      <h1>  <%= link_to "create an event", new_event_path %> </h1>
+    </div>
   </div>
 
-<div class="container">
 
-  <% @events.each do |event| %>
+<!--   <% @events.each do |event| %>
     <ul>
       <li> <%= link_to event.name, event_path(event) if event %>  </li>
     </ul>
-  <% end %>
+  <% end %> -->
 
-</div>
+   <div class="intro-message ">
+    <div class="container">
+      <h2> You need to plan and event gathering a lot of more and less busy people and you dont know how to find a date
+        for everybody ? <br>
+        <br>
+        Do you need a date for :
+      </h2>
+    </div>
+  </div>
 
+  <div class="sub">
+    <div class="container">
+      <div class="info">
+        <div class="picture">
+          <%= image_tag "student.jpg" %>
+        </div>
+        <div class="text">
+          <h2> For your thesis soutenance ?</h2>
+          <p> You need to plan and event gathering a lot of more and less busy people and you dont know how to find a date
+        for everybody ? Dont worry we help you to predict what gonna happen ...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sub">
+    <div class="container">
+      <div class="info">
+        <div class="text">
+          <h2> For your wedding ?</h2>
+          <p> You need to plan and event gathering a lot of more and less busy people and you dont know how to find a date
+          for everybody ? Dont worry we help you to predict what gonna happen ...</p>
+        </div>
+        <div class="picture">
+          <%= image_tag "depress_student.jpg" %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sub">
+    <div class="container">
+      <div class="info">
+        <div class="text">
+          <h2> For this important meeting your boss ?</h2>
+          <p> You need to plan and event gathering a lot of more and less busy people and you dont know how to find a date
+          for everybody ? Dont worry we help you to predict what gonna happen ...</p>
+        </div>
+        <div class="picture">
+          <%= image_tag "employe.jpg" %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+   <div class="intro-message ">
+    <div class="container">
+      <h2> Dont worry, we know what you're going through. <br>
+        We can help you to predict what gonna happen ...
+      </h2>
+    </div>
+  </div>
 
 <%= render 'shared/footer' %>
 
