@@ -1,5 +1,10 @@
 <%= render 'shared/navbar' %>
-<%= link_to "create and find date for an event", new_event_path %>
+
+  <div class="font">
+    <%= link_to "create and find date for an event", new_event_path %>
+  </div>
+
+<div class="container">
 
   <% @events.each do |event| %>
     <ul>
@@ -7,6 +12,8 @@
     </ul>
   <% end %>
 
+</div>
 
-    <%= render 'shared/footer' %>
+
+<%= render 'shared/footer' %>
 
