@@ -3,7 +3,11 @@
   <div class="font">
     <div class="intro">
       <h1> Cursed planner </h1>
-      <h1>  <%= link_to "create an event", new_event_path %> </h1>
+      <div class="intro-message ">
+        <h2> You need to plan and event gathering a lot of more and less busy people and you dont know how to find a date
+          for everybody ? </h2>
+      </div>
+        <h1>  <%= link_to "create an event", new_event_path %> </h1>
     </div>
   </div>
 
@@ -14,26 +18,20 @@
     </ul>
   <% end %> -->
 
-   <div class="intro-message ">
-    <div class="container">
-      <h2> You need to plan and event gathering a lot of more and less busy people and you dont know how to find a date
-        for everybody ? <br>
-        <br>
-        Do you need a date for :
-      </h2>
-    </div>
-  </div>
 
+<div class="sections"></div>
+  <div class="container">
+    <h2>  Do you need a date for : </h2>
+  </div>
   <div class="sub">
     <div class="container">
       <div class="info">
         <div class="picture">
           <%= image_tag "student.jpg" %>
         </div>
-        <div class="text">
-          <h2> For your thesis soutenance ?</h2>
-          <p> You need to plan and event gathering a lot of more and less busy people and you dont know how to find a date
-        for everybody ? Dont worry we help you to predict what gonna happen ...</p>
+        <div class="rigth-t">
+          <h2> Your thesis soutenance ?</h2>
+          <p> You probably need to gather people around the country with very specific academic background ? </p>
         </div>
       </div>
     </div>
@@ -42,10 +40,9 @@
   <div class="sub">
     <div class="container">
       <div class="info">
-        <div class="text">
-          <h2> For your wedding ?</h2>
-          <p> You need to plan and event gathering a lot of more and less busy people and you dont know how to find a date
-          for everybody ? Dont worry we help you to predict what gonna happen ...</p>
+        <div class="left-t">
+          <h2> Your wedding ?</h2>
+          <p> You might absolutely want several close friend and distant family to be attending to this special event </p>
         </div>
         <div class="picture">
           <%= image_tag "depress_student.jpg" %>
@@ -57,10 +54,9 @@
   <div class="sub">
     <div class="container">
       <div class="info">
-        <div class="text">
-          <h2> For this important meeting your boss ?</h2>
-          <p> You need to plan and event gathering a lot of more and less busy people and you dont know how to find a date
-          for everybody ? Dont worry we help you to predict what gonna happen ...</p>
+        <div class="rigth-t">
+          <h2> This important meeting your boss ?</h2>
+          <p> You know the one who needs your boss, your boss'boss and other very busy people </p>
         </div>
         <div class="picture">
           <%= image_tag "employe.jpg" %>
@@ -76,6 +72,8 @@
       </h2>
     </div>
   </div>
+</div>
+
 
 <%= render 'shared/footer' %>
 
