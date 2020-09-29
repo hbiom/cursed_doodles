@@ -4,25 +4,18 @@
     <div class="intro">
       <h1> Cursed planner </h1>
       <div class="intro-message ">
-        <h2> You need to plan and event gathering a lot of more and less busy people and you dont know how to find a date
-          for everybody ? </h2>
+<!--         <h2> You need to plan and event gathering a lot of more and less busy people and you dont know how to find a date
+          for everybody ? </h2> -->
       </div>
         <h1>  <%= link_to "Create an event", new_event_path %> </h1>
     </div>
   </div>
 
-
-<!--   <% @events.each do |event| %>
-    <ul>
-      <li> <%= link_to event.name, event_path(event) if event %>  </li>
-    </ul>
-  <% end %> -->
-
-
 <div class="sections"></div>
   <div class="text-intro">
     <h2> You need to plan and event gathering a lot of more and less busy people and you dont know how to find a date
           for everybody ? </h2>
+          <h2> That great !!</h2>
     <h2>  Well, do you need a date for : </h2>
   </div>
   <div class="sub">
@@ -70,8 +63,8 @@
     <div class="text-intro">
       <h2> Dont worry, we know what you're going through. <br>
     We can help you to predict what gonna happen ...
+      <h1>  <%= link_to "Create an event", new_event_path %> </h1>
     </div>
-    <h1>  <%= link_to "Create an event", new_event_path %> </h1>
 </div>
 
 <%= render 'shared/footer' %>
