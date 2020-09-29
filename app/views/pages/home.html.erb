@@ -7,7 +7,7 @@
         <h2> You need to plan and event gathering a lot of more and less busy people and you dont know how to find a date
           for everybody ? </h2>
       </div>
-        <h1>  <%= link_to "create an event", new_event_path %> </h1>
+        <h1>  <%= link_to "Create an event", new_event_path %> </h1>
     </div>
   </div>
 
@@ -20,8 +20,10 @@
 
 
 <div class="sections"></div>
-  <div class="container">
-    <h2>  Do you need a date for : </h2>
+  <div class="text-intro">
+    <h2> You need to plan and event gathering a lot of more and less busy people and you dont know how to find a date
+          for everybody ? </h2>
+    <h2>  Well, do you need a date for : </h2>
   </div>
   <div class="sub">
     <div class="container">
@@ -30,7 +32,7 @@
           <%= image_tag "student.jpg" %>
         </div>
         <div class="rigth-t">
-          <h2> Your thesis soutenance ?</h2>
+          <h2> Your <span>thesis soutenance</span> ?</h2>
           <p> You probably need to gather people around the country with very specific academic background ? </p>
         </div>
       </div>
@@ -41,8 +43,8 @@
     <div class="container">
       <div class="info">
         <div class="left-t">
-          <h2> Your wedding ?</h2>
-          <p> You might absolutely want several close friend and distant family to be attending to this special event </p>
+          <h2> Your <span>wedding</span> ?</h2>
+          <p> You might want several close friend and distant family to be attending to this special event </p>
         </div>
         <div class="picture">
           <%= image_tag "depress_student.jpg" %>
@@ -54,12 +56,12 @@
   <div class="sub">
     <div class="container">
       <div class="info">
-        <div class="rigth-t">
-          <h2> This important meeting your boss ?</h2>
-          <p> You know the one who needs your boss, your boss'boss and other very busy people </p>
-        </div>
         <div class="picture">
           <%= image_tag "employe.jpg" %>
+        </div>
+        <div class="rigth-t">
+          <h2> This important <span>meeting your boss</span> ?</h2>
+          <p> You know the one who absolutely needs your boss, your boss'boss and other very busy people </p>
         </div>
       </div>
     </div>
@@ -73,7 +75,6 @@
     </div>
   </div>
 </div>
-
 
 <%= render 'shared/footer' %>
 

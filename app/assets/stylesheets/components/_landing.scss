@@ -1,11 +1,11 @@
 
 .font {
   width: 100%;
-  background-image: image-url("onu1.jpg");
+  background-image: image-url("meeting.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   text-align: center;
-  background-position: bottom;
+  background-position: center;
 }
 
 .intro {
@@ -21,6 +21,14 @@
   a {
     padding-top:20px;
   }
+}
+
+
+.text-intro {
+  background-color: white;
+  height:200px;
+  text-align:center;
+  padding-top: 50px;
 }
 
 .intro-message {
@@ -44,14 +52,11 @@
 }
 
 .picture {
-  width: 100%;
+  width: 80%;
 
   img {
-    width: 100%;
+    width: 80%;
   }
-}
-
-.text {
 }
 
 .rigth-t{
@@ -64,10 +69,11 @@
 
 
 .sub {
-  border-bottom: 1px solid gray;
   padding-bottom:20px;
 }
 
 .sub:nth-child(odd) {
-  background-color: #F8F8F8;
+  // background-color: #F8F8F8;
+  background-color: rgb(230, 230, 230);
+
 }
