@@ -30,13 +30,11 @@ class Event < ApplicationRecord
   end
 
   def participants
-
     participants = Hash.new(0)
 
     self.users.each do |user|
-
       self.start_event.each do |item|
-        if user.date_user.empty?
+        unless user
           participants[item] = 0
         else
           user.date_user.include?(item) ? participants[item] += 1 : participants[item] += 0
@@ -44,6 +42,24 @@ class Event < ApplicationRecord
       end
     end
     participants
+  end
+
+  def number_user
+    self.users.count
+  end
+
+
+  def define_date_for_user
+    dates_event = self.participants
+    dates = []
+    dates_event.each do |date, number_participant|
+      if number_participant != (self.number_user-1)
+        if [true, false].sample
+          dates << date
+        end
+      end
+    end
+    dates.join(', ')
   end
 
  #  def date_available
@@ -57,22 +73,30 @@ class Event < ApplicationRecord
  #  date_event
  # end
 
-  def date_available
-    date_event = self.start_event
 
-    self.users.each do |user|
-      unless user.role == "Organisator"
-        user.date_user.each do |date_user|
-          date_event.delete_at date_event.find_index(date_user)
-        end
-      end
-    end
-  date_event
- end
+
+
+
+ #  def date_available
+ #    date_event = self.start_event
+
+ #    self.users.each do |user|
+ #      unless user.role == "Organisator"
+ #        user.date_user.each do |date_user|
+ #          date_event.delete_at date_event.find_index(date_user)
+ #        end
+ #      end
+ #    end
+ #  date_event
+ # end
+
+
+
+
+
+
 
 # form in several steps
-
-
   def steps
     %w[name time]
   end
@@ -88,7 +112,6 @@ class Event < ApplicationRecord
   def previous_step
     self.current_step = steps[steps.index(current_step) - 1]
   end
-
 
   def first_step?
     self.current_step == steps.first

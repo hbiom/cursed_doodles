@@ -4,19 +4,19 @@ class User < ApplicationRecord
 
 
 
-  # def start_event
-  #   self.start_time.split(',').map(&:to_date)
-  # end
-
-
-  def start
-    start = []
-    self.uptimes.each do |date|
-      # start = Date.new(date.start_time.strftime("%y").to_i , date.start_time.strftime("%m").to_i , date.start_time.strftime("%d").to_i)
-      start << date.start_time.to_date
-    end
-    start
+  def start_event
+    self.start_time.split(',').map(&:to_date)
   end
+
+
+  # def start
+  #   start = []
+  #   self.uptimes.each do |date|
+  #     # start = Date.new(date.start_time.strftime("%y").to_i , date.start_time.strftime("%m").to_i , date.start_time.strftime("%d").to_i)
+  #     start << date.start_time.to_date
+  #   end
+  #   "" if start.empty?
+  # end
 
   # def end
   #   ending = ""
@@ -26,7 +26,6 @@ class User < ApplicationRecord
   #   end
   #   ending
   # end
-
 
   def date_user
     dates_user = []
