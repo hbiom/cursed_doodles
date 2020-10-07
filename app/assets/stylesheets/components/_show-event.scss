@@ -24,12 +24,19 @@
   margin-left: auto;
   display:flex;
   justify-content: space-around;
-
-  li {
-    list-style: none;
-    color: #1944DA;
-    border-bottom: 4px solid #1944DA;
-    font-weight: bold;
-  }
 }
 
+.blue_link {
+      list-style-type: none;
+  text-decoration: none;
+  list-style: none;
+  color: #1944DA;
+  border-bottom: 4px solid #1944DA;
+  font-weight: bold;
+}
+
+.link {
+  list-style: none;
+  color: #1944DA;
+  font-weight: bold;
+}
