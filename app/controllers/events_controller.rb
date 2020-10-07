@@ -35,6 +35,12 @@ class EventsController < ApplicationController
     @users = User.where("event_id = '#{@event.id}'")
   end
 
+
+  def calendar_show
+    @event = Event.find(params[:id])
+    @users = User.where("event_id = '#{@event.id}'")
+  end
+
   private
 
   def event_params

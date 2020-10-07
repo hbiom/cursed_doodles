@@ -34,12 +34,16 @@ class Event < ApplicationRecord
     end
   end
 
+  def number_user
+    self.users.count
+  end
+
   def participants
     participants = Hash.new(0)
 
     self.users.each do |user|
       self.start_event.each do |item|
-        if user.role == "Organisator"
+        unless user
           participants[item] = 0
         else
           user.date_user.include?(item) ? participants[item] += 1 : participants[item] += 0
@@ -49,56 +53,24 @@ class Event < ApplicationRecord
     participants
   end
 
-  def number_user
-    self.users.count
-  end
-
-
   def define_date_for_user
     dates_event = self.participants
     dates = []
     dates_event.each do |date, number_participant|
-      if number_participant != (self.number_user)
-        if [true, false].sample
+
+      if self.number_user == 2
+        if [true, true, false].sample
+          dates << date
+        end
+
+      elsif number_participant != (self.number_user - 1)
+        if [true, true, false].sample
           dates << date
         end
       end
     end
     dates.join(', ')
   end
-
-
-
- #  def date_available
- #    date_event = self.start_event
-
- #    self.users.each do |user|
- #      #unless user.role == "Organisator"
- #        date_event = user.date_user & date_event
- #      #end
- #    end
- #  date_event
- # end
-
-
- #  def date_available
- #    date_event = self.start_event
-
- #    self.users.each do |user|
- #      unless user.role == "Organisator"
- #        user.date_user.each do |date_user|
- #          date_event.delete_at date_event.find_index(date_user)
- #        end
- #      end
- #    end
- #  date_event
- # end
-
-
-
-
-
-
 
 # form in several steps
   def steps

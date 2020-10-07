@@ -24,7 +24,7 @@
         </td>
         <% @event.participants.each do |date, number| %>
           <td class="part-number">
-            <p> <i class="fas fa-check"></i> <%= number + 1 %></p>
+            <p> <i class="fas fa-check"></i> <%= number %></p>
           </td>
         <% end %>
 
@@ -48,10 +48,6 @@
             <% end %>
             </tr>
           <% end %>
-
-
-
-
         </table>
         <%= link_to "invite a user", new_event_user_path(@event) %>
       </div>

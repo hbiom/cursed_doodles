@@ -14,4 +14,8 @@ end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   get "events/:id/create_orga", to: "users#create_orga", as: "create_orga"
+
+
+  get "events/:id/calendar_show", to: "events#calendar_show", as: "calendar"
+
 end
