@@ -62,15 +62,7 @@ class UsersController < ApplicationController
       end
     else
       ### uptime for invite people
-
-      #date_number = @event.date_available.size
-
-      if @event.start_event.empty?
-        user_date = ""
-      else
-        user_date = @event.define_date_for_user
-      end
-
+      @event.start_event.empty? ? user_date = "" : user_date = @event.define_date_for_user
       @uptime = Uptime.create!(start_time: user_date, user: user)
       if @uptime.save
         redirect_to event_path(@event)

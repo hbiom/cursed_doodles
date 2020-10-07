@@ -17,10 +17,15 @@ class Event < ApplicationRecord
   #   Date.new(self.ending_at.strftime("%y").to_i , self.ending_at.strftime("%m").to_i , self.ending_at.strftime("%d").to_i)
   # end
 
-
   def start_event
     self.start_time.split(',').map(&:to_date)
   end
+
+  def range_event
+    date_array = self.start_time.split(',').map(&:to_date)
+    return date_array.min..date_array.max
+  end
+
 
   def date_pick
     dates = []
@@ -34,7 +39,7 @@ class Event < ApplicationRecord
 
     self.users.each do |user|
       self.start_event.each do |item|
-        unless user
+        if user.role == "Organisator"
           participants[item] = 0
         else
           user.date_user.include?(item) ? participants[item] += 1 : participants[item] += 0
@@ -53,7 +58,7 @@ class Event < ApplicationRecord
     dates_event = self.participants
     dates = []
     dates_event.each do |date, number_participant|
-      if number_participant != (self.number_user-1)
+      if number_participant != (self.number_user)
         if [true, false].sample
           dates << date
         end
@@ -61,6 +66,8 @@ class Event < ApplicationRecord
     end
     dates.join(', ')
   end
+
+
 
  #  def date_available
  #    date_event = self.start_event
@@ -72,9 +79,6 @@ class Event < ApplicationRecord
  #    end
  #  date_event
  # end
-
-
-
 
 
  #  def date_available
