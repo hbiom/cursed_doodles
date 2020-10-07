@@ -6,6 +6,7 @@
 .doodles {
   table-layout: fixed;
   width: 200px;
+  margin-bottom: 20px;
 
   table, th, td {
     border: 1px solid #E0E0E0;
@@ -48,6 +49,20 @@
     font-weight: bold;
     font-size: 20px;
   }
+}
+
+
+table.doodles > tbody tr > td:first-child {
+position: absolute;
+  background-color: white;
+}
+
+table.doodles > tbody tr th:first-child   {
+position: absolute;
+  background-color: white;
+width: 180px;
+height: 100px;
+
 }
 
 .scroller {
