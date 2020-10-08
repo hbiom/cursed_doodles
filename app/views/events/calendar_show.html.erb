@@ -6,12 +6,13 @@
     <p> <%= "Print" %></p>
   </div>
   <div class = "edt-info">
-   <div class="edt-info-container">
+    <div class="edt-info-container">
       <p> <i class="fas fa-map-marker" style="color:gray"></i> </p> <p> <%= @event.place %></p>
     </div>
+
    <div class="edt-info-container">
       <p> <i class="fas fa-align-justify" style="color:gray"></i> </p>
-      <div>
+      <div class="limit">
         <p> <%= @event.note %> </p>
       </div>
     </div>
@@ -21,7 +22,8 @@
     <%= link_to "Table", event_path(@event), class: "link" %>
     <%= link_to "Calendar", calendar_path(@event), class: "blue_link" %>
   </div>
-
     <%= render "calendar" %>
-
-<!-- rails effet tab -->
+  <div class="edt-info">
+      <%= link_to "invite a user", new_event_user_path(@event), class: "buttonval"  %>
+  </div>
+</div>

@@ -2,11 +2,13 @@
 .doodles-calendar {
   table-layout: fixed;
   width: 200px;
+  margin-bottom: 20px;
+
 
   th, td {
     text-align: center;
     width: 100px;
-    height: 40px;
+    height: 50px;
   }
 
   table, th, td {
@@ -28,6 +30,18 @@
   }
 }
 
+table.doodles-calendar > tbody tr > td:first-child {
+  position: absolute;
+  background-color: white;
+}
+
+table.doodles-calendar > tbody tr th:first-child   {
+  position: absolute;
+  background-color: white;
+  width: 180px;
+  height: 103px;
+}
+
 
 .part-number-calendar {
   color: black;
@@ -43,9 +57,11 @@
 
 .cal-here {
   background-color: rgb(206, 230, 161);
+  height: 50px;
 }
 
 
 .cal-nothere {
   background-color: rgb(244, 209, 202);
+  height: 50px;
 }
