@@ -34,11 +34,13 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 5px;
   width: 826px;
-  height: 100vh;
+  min-height: 80vh;
+  height: auto;
   margin: 50px auto;
-  padding-top: 50px;
+  padding: 50px 0;
   background-color: white;
 }
+
 
 .edt-info-container {
   display:flex;
