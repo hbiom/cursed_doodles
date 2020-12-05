@@ -10,28 +10,24 @@
 
 .intro {
     padding-top: 10%;
-    padding-bottom: 20%;
+    padding-bottom: 15%;
 
   h1,h2 {
     color: white;
     margin: 0;
     text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
   }
-
-  a {
-    padding-top:20px;
-  }
 }
 
 .text-intro {
   background-color: white;
   text-align:center;
-  padding: 30px 0;
+  padding: 30px 70px;
 }
 
 .intro-message {
   width: 100%;
-  padding: 50px 0;
+  padding: 50px 0px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -59,10 +55,18 @@
 
 .rigth-t{
   margin-left: 50px;
+
+  p {
+    margin-top:30px;
+  }
 }
 
 .left-t{
   margin-right: 50px;
+
+  p {
+    margin-top:30px;
+  }
 }
 
 
