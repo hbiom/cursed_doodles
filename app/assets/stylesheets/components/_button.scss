@@ -1,6 +1,6 @@
 
 .margin {
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 .whitebutton a {
@@ -12,20 +12,31 @@
   text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
 }
 
-.blackbutton a {
-  color: black;
-  font-weight: bold;
-  padding:10px 10px;
-  font-size: 32px;
-  margin-top: 20px;
-}
-
 .whitebutton a:hover {
   color: white;
   font-weight: bold;
   padding:10px 10px;
   font-size: 32px;
   border: 2px solid white;
+  border-radius:5px;
+}
+
+.blackbutton a {
+  color: black;
+  font-weight: bold;
+  padding:10px 10px;
+  font-size: 32px;
+  margin-top: 30px;
+}
+
+.blackbutton a:hover {
+  color: black;
+  font-weight: bold;
+  padding:10px 10px;
+  font-size: 32px;
+  margin-top: 20px;
+  border: 2px solid black;
+  border-radius:5px;
 }
 
 
