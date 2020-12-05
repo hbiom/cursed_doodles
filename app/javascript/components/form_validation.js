@@ -17,12 +17,10 @@ const nameInputVal = () => {
   }
 }
 
-export { nameInputVal };
 
 const nameuserInputVal = () => {
   const username = document.getElementById("user_name");
   const button = document.getElementById("buttonvalformuser");
-
   if (username) {
     username.addEventListener('input', () => {
       if (username.value.length == 0) {
@@ -36,7 +34,6 @@ const nameuserInputVal = () => {
   }
 }
 
-export { nameuserInputVal };
 
 const eventInputVal = () => {
   const dateEvent = document.getElementById("start_date");
@@ -55,4 +52,4 @@ const eventInputVal = () => {
   }
 }
 
-export { eventInputVal };
+export { nameInputVal, nameuserInputVal, eventInputVal };

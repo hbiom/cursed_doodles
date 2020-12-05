@@ -29,7 +29,7 @@ const flatpickr_user = () => {
 };
 
 
-export { flatpickr_event };
-export { flatpickr_user };
+export { flatpickr_event, flatpickr_user };
+
 
 
