@@ -6,12 +6,6 @@ const nameuserInputVal = () => {
   const button = document.getElementById("buttonvalformuser");
 
   if (username) {
-
-    if (username.value.length != 0) {
-        button.className = "button";
-        button.disabled = false;
-    }
-
     username.addEventListener('input', () => {
       if (username.value.length == 0) {
         console.log("0 and disable")

@@ -5,15 +5,6 @@ const nameInputVal = () => {
   const button = document.getElementById("buttonvalform");
 
   if (nameInput) {
-
-    if (nameInput.value.length == 0) {
-        button.className = "button";
-        button.disabled = true;
-    } else {
-        button.className = "buttonval";
-        button.disabled = false;
-    }
-
     nameInput.addEventListener('input', () => {
       if (nameInput.value.length == 0) {
         button.className = "button";
@@ -33,12 +24,6 @@ const nameuserInputVal = () => {
   const button = document.getElementById("buttonvalformuser");
 
   if (username) {
-
-    if (username.value.length != 0) {
-        button.className = "button";
-        button.disabled = false;
-    }
-
     username.addEventListener('input', () => {
       if (username.value.length == 0) {
         button.className = "button";
@@ -58,16 +43,6 @@ const eventInputVal = () => {
   const button = document.getElementById("buttonvalform");
 
   if (dateEvent) {
-
-    if (dateEvent.value == "") {
-        button.className = "button";
-        button.disabled = true;
-     } else {
-        button.className = "buttonval";
-        button.disabled = false;
-    }
-
-
     dateEvent.addEventListener('input', () => {
       if (dateEvent.value.length == 0) {
         button.className = "button";
