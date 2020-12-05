@@ -23,8 +23,6 @@ import { nameuserInputVal } from '../components/form_validation';
 import { eventInputVal } from '../components/form_validation';
 // import { empty } from '../components/form_validation';
 
-
-
 import { flatpickr_event } from '../components/flatpickr_event_date';
 import { flatpickr_user } from '../components/flatpickr_event_date';
 
@@ -33,8 +31,8 @@ document.addEventListener('turbolinks:load', () => {
   // Call your JS functions here
   nameInputVal();
   nameuserInputVal();
+  eventInputVal()
   flatpickr_event()
   flatpickr_user()
-  eventInputVal()
   // empty()
 });

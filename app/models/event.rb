@@ -40,7 +40,6 @@ class Event < ApplicationRecord
 
   def participants
     participants = Hash.new(0)
-
     self.users.each do |user|
       self.start_event.each do |item|
         unless user
