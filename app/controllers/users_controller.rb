@@ -43,7 +43,6 @@ class UsersController < ApplicationController
     params.permit(:start_time, :user)
   end
 
-
   # def define_uptime(user)
   #   if user.role == "Organisator"
   #     @uptime = Uptime.create!(start_time: @event.start_time, user: user)
