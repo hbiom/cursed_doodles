@@ -10,17 +10,24 @@ Uptime.destroy_all
 User.destroy_all
 Event.destroy_all
 
-dates = "December 17 2020, December 16 2020,December 18 2020,December 19 2020,December 20 2020"
+dates_string = "December 17 2020, December 16 2020,December 18 2020,December 19 2020,December 20 2020"
 # dates.map {|date| date.to_date}
 
+today = Date.today
 
+dates = []
+[5, 8, 12, 15].sample.times do
+  today += [1, 2, 3, 5].sample
+  dates << today.strftime("%B %d %Y")
+end
 
+  print((dates*","))
 
 
 thesis = Event.create!(name: 'Soutenance de thése',
                       place: 'Paris',
                       note: 'Cest avec plaisir que',
-                      start_time: dates)
+                      start_time: dates*",")
 
 newton = User.create!(name:'newton', role: 'Dr', event_id: thesis.id)
 pasteur = User.create!(name:'pasteur', role: 'Pr', event_id: thesis.id)
