@@ -51,7 +51,7 @@ comitee = [newton, pasteur, curie, jenner, pascal]
 comitee.each {|menber| define_uptime(menber, thesis)}
 
 
-weeding = Event.create!(name: 'Weeding',
+weeding = Event.create!(name: 'Wedding',
                       place: 'Paris',
                       note: 'Cest avec plaisir que',
                       start_time: dates)
