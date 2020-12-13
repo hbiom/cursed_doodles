@@ -20,14 +20,12 @@ dates = []
   today += [1, 2, 3, 5].sample
   dates << today.strftime("%B %d %Y")
 end
+dates = dates * ","
 
-  print((dates*","))
-
-
-thesis = Event.create!(name: 'Soutenance de thése',
+thesis = Event.create!(name: 'Thesis soutenance',
                       place: 'Paris',
                       note: 'Cest avec plaisir que',
-                      start_time: dates*",")
+                      start_time: dates)
 
 newton = User.create!(name:'newton', role: 'Dr', event_id: thesis.id)
 pasteur = User.create!(name:'pasteur', role: 'Pr', event_id: thesis.id)
@@ -51,3 +49,36 @@ comitee = [newton, pasteur, curie, jenner, pascal]
   end
 
 comitee.each {|menber| define_uptime(menber, thesis)}
+
+
+weeding = Event.create!(name: 'Weeding',
+                      place: 'Paris',
+                      note: 'Cest avec plaisir que',
+                      start_time: dates)
+
+tata_jeannine = User.create!(name:'tata jeannine', role: 'Dr', event_id: weeding.id)
+tata_huguette = User.create!(name:'tata huguette', role: 'Pr', event_id: weeding.id)
+marie = User.create!(name:'Marie', role: 'Présidente', event_id: weeding.id)
+tonton_yves = User.create!(name:'tonton yves', role: 'directeur de thése', event_id: weeding.id)
+sophie = User.create!(name:'sophie', role: 'directeur de thése', event_id: weeding.id)
+
+family_co = [tata_jeannine, tata_huguette, marie, tonton_yves, sophie]
+
+family_co.each {|menber| define_uptime(menber, weeding)}
+
+
+
+job_meeting = Event.create!(name: 'Meeting',
+                      place: 'Paris',
+                      note: 'Cest avec plaisir que',
+                      start_time: dates)
+
+elon = User.create!(name:'Elon', role: 'Dr', event_id: job_meeting.id)
+bill = User.create!(name:'bill', role: 'Pr', event_id: job_meeting.id)
+steve = User.create!(name:'Steve', role: 'Présidente', event_id: job_meeting.id)
+jack = User.create!(name:'jack', role: 'directeur de thése', event_id: job_meeting.id)
+mark = User.create!(name:'mark', role: 'directeur de thése', event_id: job_meeting.id)
+
+boss = [elon, bill, steve, jack, mark]
+
+boss.each {|menber| define_uptime(menber, job_meeting)}
