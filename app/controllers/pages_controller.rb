@@ -7,7 +7,9 @@ class PagesController < ApplicationController
     # @events = Event.all
     #@thesis = Event.where(name: 'Soutenance de thése')
 
-    @thesis = Event.find_by(name: 'Soutenance de thése')
+    @thesis = Event.find_by(name: 'Thesis soutenance')
+    @weeding = Event.find_by(name: 'Weeding')
+    @meeting = Event.find_by(name: 'Meeting')
 
   end
 
