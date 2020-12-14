@@ -85,10 +85,10 @@
   position:relative;
 }
 
-.picture img:nth-child(1) {
+.picture a:nth-child(1) {
   position:absolute;
 }
 
-.picture img:nth-child(1):hover {
+.picture a:nth-child(1):hover {
   opacity:0;
 }

@@ -21,8 +21,15 @@
     <div class="container">
       <div class="info">
         <div class="picture">
-          <%= image_tag "student.jpg" %>
-          <%= image_tag "depress_student.jpg" %>
+
+          <%= link_to event_path(@thesis) do %>
+            <%= image_tag("student.jpg", alt: 'Logo')%>
+          <% end %>
+
+          <%= link_to event_path(@thesis) do %>
+            <%= image_tag("depress_student.jpg", alt: 'Logo')%>
+          <% end %>
+
         </div>
         <div class="rigth-t">
           <h2> Your <span>thesis soutenance</span> ?</h2>
@@ -41,7 +48,14 @@
           <p> You might want several close friend and distant family to be attending to this special event </p>
         </div>
         <div class="picture">
-          <%= image_tag "depress_student.jpg" %>
+         <%= link_to event_path(@thesis) do %>
+            <%= image_tag("depress_student.jpg", alt: 'Logo')%>
+          <% end %>
+
+          <%= link_to event_path(@thesis) do %>
+            <%= image_tag("employe.jpg", alt: 'Logo')%>
+          <% end %>
+
         </div>
       </div>
     </div>
@@ -52,7 +66,13 @@
     <div class="container">
       <div class="info">
         <div class="picture">
-          <%= image_tag "employe.jpg" %>
+         <%= link_to event_path(@thesis) do %>
+            <%= image_tag("employe.jpg", alt: 'Logo')%>
+          <% end %>
+
+          <%= link_to event_path(@thesis) do %>
+            <%= image_tag("student.jpg", alt: 'Logo')%>
+          <% end %>
         </div>
         <div class="rigth-t">
           <h2> This important <span>meeting with your boss</span> ?</h2>
