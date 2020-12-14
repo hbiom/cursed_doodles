@@ -46,10 +46,13 @@
 }
 
 .picture {
-  width: 500px;
+  width: 400px;
 
   img {
     width: 100%;
+    height: 260px;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 }
 
@@ -74,4 +77,21 @@
   // background-color: #F8F8F8;
   background-color: rgb(230, 230, 230);
 
+}
+
+
+// .container {
+//   position:relative;
+// }
+
+.picture {
+  position:relative;
+}
+
+.picture img:nth-child(1) {
+  position:absolute;
+}
+
+.picture img:nth-child(1):hover {
+  opacity:0;
 }
