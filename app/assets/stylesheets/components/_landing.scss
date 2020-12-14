@@ -87,6 +87,10 @@
 
 .picture a:nth-child(1) {
   position:absolute;
+  -webkit-transition: opacity 2s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
 }
 
 .picture a:nth-child(1):hover {
