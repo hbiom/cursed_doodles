@@ -1,6 +1,7 @@
 
 .font {
   width: 100%;
+  height: calc(100vh - 60px);
   background-image: image-url("meeting.jpg");
   background-repeat: no-repeat;
   background-size: cover;
