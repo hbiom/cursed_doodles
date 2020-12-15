@@ -27,13 +27,14 @@ thesis = Event.create!(name: 'Thesis soutenance',
                       note: 'Cest avec plaisir que',
                       start_time: dates)
 
+emilie = User.create!(name:'emilie', role: 'Organisator', event_id: thesis.id)
 newton = User.create!(name:'newton', role: 'Dr', event_id: thesis.id)
 pasteur = User.create!(name:'pasteur', role: 'Pr', event_id: thesis.id)
 curie = User.create!(name:'curie', role: 'Présidente', event_id: thesis.id)
 jenner = User.create!(name:'jenner', role: 'directeur de thése', event_id: thesis.id)
 pascal = User.create!(name:'pascal', role: 'directeur de thése', event_id: thesis.id)
 
-comitee = [newton, pasteur, curie, jenner, pascal]
+comitee = [emilie, newton, pasteur, curie, jenner, pascal]
 
  def define_uptime(user, event)
     if user.role == "Organisator"
@@ -51,34 +52,54 @@ comitee = [newton, pasteur, curie, jenner, pascal]
 comitee.each {|menber| define_uptime(menber, thesis)}
 
 
+today = Date.today
+
+dates = []
+[5, 8, 12, 15].sample.times do
+  today += [1, 2, 3, 5].sample
+  dates << today.strftime("%B %d %Y")
+end
+dates = dates * ","
+
 weeding = Event.create!(name: 'Wedding',
                       place: 'Paris',
                       note: 'Cest avec plaisir que',
                       start_time: dates)
 
+
+juliette = User.create!(name:'juliette', role: 'Organisator', event_id: weeding.id)
 tata_jeannine = User.create!(name:'tata jeannine', role: 'Dr', event_id: weeding.id)
 tata_huguette = User.create!(name:'tata huguette', role: 'Pr', event_id: weeding.id)
 marie = User.create!(name:'Marie', role: 'Présidente', event_id: weeding.id)
 tonton_yves = User.create!(name:'tonton yves', role: 'directeur de thése', event_id: weeding.id)
 sophie = User.create!(name:'sophie', role: 'directeur de thése', event_id: weeding.id)
 
-family_co = [tata_jeannine, tata_huguette, marie, tonton_yves, sophie]
+family_co = [juliette, tata_jeannine, tata_huguette, marie, tonton_yves, sophie]
 
 family_co.each {|menber| define_uptime(menber, weeding)}
 
 
+today = Date.today
+
+dates = []
+[5, 8, 12, 15].sample.times do
+  today += [1, 2, 3, 5].sample
+  dates << today.strftime("%B %d %Y")
+end
+dates = dates * ","
 
 job_meeting = Event.create!(name: 'Meeting',
                       place: 'Paris',
                       note: 'Cest avec plaisir que',
                       start_time: dates)
 
+bruno = User.create!(name:'Bruno', role: 'Organisator', event_id: job_meeting.id)
 elon = User.create!(name:'Elon', role: 'Dr', event_id: job_meeting.id)
 bill = User.create!(name:'bill', role: 'Pr', event_id: job_meeting.id)
 steve = User.create!(name:'Steve', role: 'Présidente', event_id: job_meeting.id)
 jack = User.create!(name:'jack', role: 'directeur de thése', event_id: job_meeting.id)
 mark = User.create!(name:'mark', role: 'directeur de thése', event_id: job_meeting.id)
 
-boss = [elon, bill, steve, jack, mark]
+boss = [bruno,elon, bill, steve, jack, mark]
 
 boss.each {|menber| define_uptime(menber, job_meeting)}
