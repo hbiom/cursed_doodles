@@ -9,6 +9,7 @@
 Uptime.destroy_all
 User.destroy_all
 Event.destroy_all
+print('db erase')
 
 dates_string = "December 17 2020, December 16 2020,December 18 2020,December 19 2020,December 20 2020"
 # dates.map {|date| date.to_date}
@@ -22,9 +23,13 @@ dates = []
 end
 dates = dates * ","
 
+
+thesis_text = "Hello, dear thesis commity, please indicate your disponibility for my thesis soutenance below. I know you are all
+very busy and sollicitated people around all the workd, but I really hope we find a common date soon. \ncordially"
+
 thesis = Event.create!(name: 'Thesis soutenance',
                       place: 'Paris',
-                      note: 'Cest avec plaisir que',
+                      note: thesis_text,
                       start_time: dates)
 
 emilie = User.create!(name:'emilie', role: 'Organisator', event_id: thesis.id)
@@ -61,11 +66,16 @@ dates = []
 end
 dates = dates * ","
 
-weeding = Event.create!(name: 'Wedding',
-                      place: 'Paris',
-                      note: 'Cest avec plaisir que',
-                      start_time: dates)
 
+weeding_text = 'Dear family, dear friend. I am so happy to invite you all to my wedding ! I want you all to be
+present for this special day. Please indicate your disponibility so we can find a common date. I know some of you
+are angry about each other, please take you differences aside and dont purposely choose different dates so you dont
+have to meet...\n I love you all !'
+
+weeding = Event.create!(name: 'Wedding',
+                        place: 'Paris',
+                        note: weeding_text,
+                        start_time: dates)
 
 juliette = User.create!(name:'juliette', role: 'Organisator', event_id: weeding.id)
 tata_jeannine = User.create!(name:'tata jeannine', role: 'Dr', event_id: weeding.id)
@@ -78,7 +88,6 @@ family_co = [juliette, tata_jeannine, tata_huguette, marie, tonton_yves, sophie]
 
 family_co.each {|menber| define_uptime(menber, weeding)}
 
-
 today = Date.today
 
 dates = []
@@ -88,9 +97,15 @@ dates = []
 end
 dates = dates * ","
 
+
+
+job_text = 'Dear all, I wish to ask you for a meeting about the new job position I looking for in the department.
+Please indicate your disponibility so we can find a common date shortly.
+\n Best regards !'
+
 job_meeting = Event.create!(name: 'Meeting',
                       place: 'Paris',
-                      note: 'Cest avec plaisir que',
+                      note: job_text,
                       start_time: dates)
 
 bruno = User.create!(name:'Bruno', role: 'Organisator', event_id: job_meeting.id)

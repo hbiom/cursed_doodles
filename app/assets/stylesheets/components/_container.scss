@@ -11,10 +11,24 @@
 }
 
 /* Sur les grands écrans, on limite la largeur du contenu */
-@media (min-width: 1200px){
-    .container {
-        width: 1170px;
-    }
+@media screen and (min-width: 1200px){
+  .container {
+    width: 1170px;
+  }
+}
+
+
+@media screen and (max-width: 800px){
+  .info {
+    flex-direction: column;
+  }
+  .picture {
+    margin: auto;
+  }
+
+  h2 {
+    margin-top: 15px;
+  }
 }
 
 
