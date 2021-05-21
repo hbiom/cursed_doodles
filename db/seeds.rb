@@ -9,10 +9,11 @@
 Uptime.destroy_all
 User.destroy_all
 Event.destroy_all
+
+
 print('db erase')
 
 dates_string = "December 17 2020, December 16 2020,December 18 2020,December 19 2020,December 20 2020"
-# dates.map {|date| date.to_date}
 
 today = Date.today
 
@@ -23,9 +24,8 @@ dates = []
 end
 dates = dates * ","
 
-
 thesis_text = "Hello, dear thesis commity, please indicate your disponibility for my thesis soutenance below. I know you are all
-very busy and sollicitated people around all the workd, but I really hope we find a common date soon. \ncordially"
+very busy and sollicitated people around all the workd, but I really hope we find a common date soon. cordially"
 
 thesis = Event.create!(name: 'Thesis soutenance',
                       place: 'Paris',
@@ -36,10 +36,10 @@ emilie = User.create!(name:'emilie', role: 'Organisator', event_id: thesis.id)
 newton = User.create!(name:'newton', role: 'Dr', event_id: thesis.id)
 pasteur = User.create!(name:'pasteur', role: 'Pr', event_id: thesis.id)
 curie = User.create!(name:'curie', role: 'Présidente', event_id: thesis.id)
-jenner = User.create!(name:'jenner', role: 'directeur de thése', event_id: thesis.id)
+# jenner = User.create!(name:'jenner', role: 'directeur de thése', event_id: thesis.id)
 pascal = User.create!(name:'pascal', role: 'directeur de thése', event_id: thesis.id)
 
-comitee = [emilie, newton, pasteur, curie, jenner, pascal]
+comitee = [emilie, newton, pasteur, curie, pascal]
 
  def define_uptime(user, event)
     if user.role == "Organisator"
@@ -57,8 +57,6 @@ comitee = [emilie, newton, pasteur, curie, jenner, pascal]
 comitee.each {|menber| define_uptime(menber, thesis)}
 
 
-today = Date.today
-
 dates = []
 [5, 8, 12, 15].sample.times do
   today += [1, 2, 3, 5].sample
@@ -70,25 +68,23 @@ dates = dates * ","
 weeding_text = 'Dear family, dear friend. I am so happy to invite you all to my wedding ! I want you all to be
 present for this special day. Please indicate your disponibility so we can find a common date. I know some of you
 are angry about each other, please take you differences aside and dont purposely choose different dates so you dont
-have to meet...\n I love you all !'
+have to meet... I love you all !'
 
 weeding = Event.create!(name: 'Wedding',
                         place: 'Paris',
                         note: weeding_text,
                         start_time: dates)
 
-juliette = User.create!(name:'juliette', role: 'Organisator', event_id: weeding.id)
-tata_jeannine = User.create!(name:'tata jeannine', role: 'Dr', event_id: weeding.id)
-tata_huguette = User.create!(name:'tata huguette', role: 'Pr', event_id: weeding.id)
-marie = User.create!(name:'Marie', role: 'Présidente', event_id: weeding.id)
-tonton_yves = User.create!(name:'tonton yves', role: 'directeur de thése', event_id: weeding.id)
-sophie = User.create!(name:'sophie', role: 'directeur de thése', event_id: weeding.id)
+juliette = User.create!(name:'juliette', role: 'bestie', event_id: weeding.id)
+tata_jeannine = User.create!(name:'tata jeannine', role: 'aunt', event_id: weeding.id)
+tata_huguette = User.create!(name:'tata huguette', role: 'aunt', event_id: weeding.id)
+marie = User.create!(name:'Marie', role: 'mun', event_id: weeding.id)
+tonton_yves = User.create!(name:'oncle', role: 'directeur de thése', event_id: weeding.id)
+#sophie = User.create!(name:'aunt', role: 'directeur de thése', event_id: weeding.id)
 
-family_co = [juliette, tata_jeannine, tata_huguette, marie, tonton_yves, sophie]
+family_co = [juliette, tata_jeannine, tata_huguette, marie, tonton_yves]
 
 family_co.each {|menber| define_uptime(menber, weeding)}
-
-today = Date.today
 
 dates = []
 [5, 8, 12, 15].sample.times do
@@ -98,23 +94,22 @@ end
 dates = dates * ","
 
 
-
-job_text = 'Dear all, I wish to ask you for a meeting about the new job position I looking for in the department.
+job_text = 'Dear all, I wish to ask you for a meeting about the new job position Im looking for in the department.
 Please indicate your disponibility so we can find a common date shortly.
-\n Best regards !'
+Best regards !'
 
 job_meeting = Event.create!(name: 'Meeting',
                       place: 'Paris',
                       note: job_text,
                       start_time: dates)
 
-bruno = User.create!(name:'Bruno', role: 'Organisator', event_id: job_meeting.id)
-elon = User.create!(name:'Elon', role: 'Dr', event_id: job_meeting.id)
-bill = User.create!(name:'bill', role: 'Pr', event_id: job_meeting.id)
-steve = User.create!(name:'Steve', role: 'Présidente', event_id: job_meeting.id)
-jack = User.create!(name:'jack', role: 'directeur de thése', event_id: job_meeting.id)
-mark = User.create!(name:'mark', role: 'directeur de thése', event_id: job_meeting.id)
+bruno = User.create!(name:'Bruno', role: 'n+1', event_id: job_meeting.id)
+elon = User.create!(name:'Elon', role: 'n+2', event_id: job_meeting.id)
+bill = User.create!(name:'bill', role: 'n+3', event_id: job_meeting.id)
+steve = User.create!(name:'Steve', role: 'RH', event_id: job_meeting.id)
+jack = User.create!(name:'jack', role: 'DRH', event_id: job_meeting.id)
+#mark = User.create!(name:'mark', role: 'directeur de thése', event_id: job_meeting.id)
 
-boss = [bruno,elon, bill, steve, jack, mark]
+boss = [bruno,elon, bill, steve, jack]
 
 boss.each {|menber| define_uptime(menber, job_meeting)}

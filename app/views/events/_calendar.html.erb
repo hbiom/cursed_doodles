@@ -37,7 +37,12 @@
         </tr>
       </table>
     </div>
-    <div class="edt-info">
-      <%= link_to "invite an user", new_event_user_path(@event), class: "buttonval"  %>
+    <div class="edt-info edt-diplay ">
+      <div>
+        <%= link_to "Invite an user", new_event_user_path(@event), class: "buttonval"  %>
+      </div>
+      <div>
+        <%= link_to "Home", root_path, class: "back"  %>
+      </div>
     </div>
   </div>
