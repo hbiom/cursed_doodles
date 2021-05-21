@@ -6,7 +6,7 @@ const nameuserInputVal = () => {
   const button = document.getElementById("buttonvalformuser");
 
   if (username) {
-    username.addEventListener('input', () => {
+    username.addEventListener('change', () => {
       if (username.value.length == 0) {
         console.log("0 and disable")
         button.className = "button";
