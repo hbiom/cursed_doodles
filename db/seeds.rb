@@ -1,19 +1,24 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+#  utility
+def define_uptime(user, event)
+  if user.role == "Organisator"
+    @uptime = Uptime.create!(start_time: event.start_time, user: user)
+    @uptime.start_time = event.start_time
+    @uptime.save
+  else
+    ### uptime for invite people
+    event.start_event.empty? ? user_date = "" : user_date = event.define_date_for_user
+    @uptime = Uptime.create!(start_time: user_date, user: user)
+    @uptime.save
+  end
+end
 
+
+# destroy all table info
 Uptime.destroy_all
 User.destroy_all
 Event.destroy_all
 
-
 print('db erase')
-
-dates_string = "December 17 2020, December 16 2020,December 18 2020,December 19 2020,December 20 2020"
 
 today = Date.today
 
@@ -41,19 +46,6 @@ pascal = User.create!(name:'Pascal', role: 'directeur de thése', event_id: thes
 
 comitee = [emilie, newton, pasteur, curie, pascal]
 
- def define_uptime(user, event)
-    if user.role == "Organisator"
-      @uptime = Uptime.create!(start_time: event.start_time, user: user)
-      @uptime.start_time = event.start_time
-      @uptime.save
-    else
-      ### uptime for invite people
-      event.start_event.empty? ? user_date = "" : user_date = event.define_date_for_user
-      @uptime = Uptime.create!(start_time: user_date, user: user)
-      @uptime.save
-    end
-  end
-
 comitee.each {|menber| define_uptime(menber, thesis)}
 
 dates = []
@@ -80,7 +72,7 @@ tata_huguette = User.create!(name:'Aunt huguette', role: 'aunt', event_id: weedi
 marie = User.create!(name:'Marie', role: 'Mun', event_id: weeding.id)
 yves = User.create!(name:'Yves', role: 'Distant cousin', event_id: weeding.id)
 
-family_co = [marie, juliette, tata_jeannine, tata_huguette, marie, tonton_yves]
+family_co = [marie, juliette, tata_jeannine, tata_huguette, marie, yves]
 
 family_co.each {|menber| define_uptime(menber, weeding)}
 
@@ -106,6 +98,6 @@ elon = User.create!(name:'Elon', role: 'n+2', event_id: job_meeting.id)
 steve = User.create!(name:'Steve', role: 'RH', event_id: job_meeting.id)
 jack = User.create!(name:'jack', role: 'DRH', event_id: job_meeting.id)
 
-boss = [derek, bruno, elon, bill, steve, jack]
+boss = [derek, bruno, elon, steve, jack]
 
 boss.each {|menber| define_uptime(menber, job_meeting)}
