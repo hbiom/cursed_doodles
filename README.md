@@ -1,24 +1,12 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+doodle clone in ruby on rails.
 
-* Ruby version
 
-* System dependencies
+![alt text](https://github.com/hbiom/cursed_doodles/blob/master/app/assets/images/readme.png)
 
-* Configuration
 
-* Database creation
+Technologies : Ruby, HTML, CSS, JS
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Deploy on heroku [Here](https://cursed-doodle.herokuapp.com/)
