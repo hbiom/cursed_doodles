@@ -26,6 +26,8 @@ import { eventInputVal } from '../components/form_validation';
 import { flatpickr_event } from '../components/flatpickr_event_date';
 import { flatpickr_user } from '../components/flatpickr_event_date';
 
+import { scrollAnimation } from '../components/scrollAnimation';
+
 
 document.addEventListener('turbolinks:load', () => {
   // Call your JS functions here
@@ -34,5 +36,6 @@ document.addEventListener('turbolinks:load', () => {
   eventInputVal()
   flatpickr_event()
   flatpickr_user()
+  scrollAnimation()
   // empty()
 });
