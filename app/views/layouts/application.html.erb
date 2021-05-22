@@ -14,13 +14,13 @@
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="shortcut icon" type="image/png" href=<%= image_tag("favicon.jpg")%>/>
-
+    <!-- <link rel="shortcut icon" type="image/png" href=<%= image_tag("favicon.jpg")%>/> -->
+    <%= favicon_link_tag asset_path('favicon.jpg') %>
     <!-- Facebook Open Graph data -->
     <meta property="og:title" content="Cursed planner" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://cursed-doodle.herokuapp.com/"/>
-    <meta property="og:image" content= <%= image_tag("favicon.jpg")%> />
+    <meta property="og:image" content= "<%= image_tag("favicon.jpg")%>" />
     <meta property="og:description" content="We offer you an unique planning simulation experience" />
     <meta property="og:site_name" content="Simulation Immo" />
 
@@ -28,7 +28,7 @@
     <meta name="twitter:card" content="Cursed planner">
     <meta name="twitter:title" content="Cursed planner">
     <meta name="twitter:description" content="We offer you an unique planning simulation experience">
-    <meta name="twitter:image:src" content=<%= image_tag("favicon.jpg")%>>
+    <meta name="twitter:image:src" content= "<%= image_tag("favicon.jpg")%>">
   </head>
 
   <body>
@@ -39,5 +39,4 @@
     </div>
   </body>
 </html>
-
 
