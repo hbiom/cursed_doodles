@@ -1,5 +1,3 @@
-
-
 .container {
     /* On ajoute une marge sur les cotés de l'écran */
     padding-right: 15px;
@@ -9,28 +7,6 @@
     margin-right: auto;
     margin-left: auto;
 }
-
-/* Sur les grands écrans, on limite la largeur du contenu */
-@media screen and (min-width: 1200px){
-  .container {
-    width: 1170px;
-  }
-}
-
-
-@media screen and (max-width: 800px){
-  .info {
-    flex-direction: column;
-  }
-  .picture {
-    margin: auto;
-  }
-
-  h2 {
-    margin-top: 15px;
-  }
-}
-
 
 .page-content {
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -55,7 +31,6 @@
   background-color: white;
 }
 
-
 .edt-info-container {
   display:flex;
 
@@ -64,8 +39,27 @@
   }
 }
 
-
 .edt-diplay {
   display: flex;
   justify-content: space-around;
+}
+
+/* Sur les grands écrans, on limite la largeur du contenu */
+@media screen and (min-width: 1200px){
+  .container {
+    width: 1170px;
+  }
+}
+
+@media screen and (max-width: 800px){
+  .info {
+    flex-direction: column;
+  }
+  .picture {
+    margin: auto;
+  }
+
+  h2 {
+    margin-top: 15px;
+  }
 }

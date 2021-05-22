@@ -1,4 +1,3 @@
-
 .font {
   width: 100%;
   height: calc(100vh - 60px);
@@ -54,9 +53,7 @@
   margin-right: 50px;
 }
 
-
 .sub:nth-child(odd) {
-  // background-color: #F8F8F8;
   background-color: rgb(230, 230, 230);
 
 }
@@ -79,6 +76,7 @@
 
   img {
     width: 260px;
+    height: 180px;
     background-repeat: no-repeat;
     background-size: cover;
   }
