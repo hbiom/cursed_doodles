@@ -6,7 +6,7 @@ Doodle clone in ruby on rails.
 <!-- ![alt text](https://github.com/hbiom/cursed_doodles/blob/master/app/assets/images/readme.png)
  -->
 <p align="center">
-  <img width="460" height="300" src=https://github.com/hbiom/cursed_doodles/blob/master/app/assets/images/readme.png>
+  <img src=https://github.com/hbiom/cursed_doodles/blob/master/app/assets/images/readme.png>
 </p>
 
 
