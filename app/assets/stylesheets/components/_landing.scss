@@ -55,7 +55,6 @@
 
 .sub:nth-child(odd) {
   background-color: rgb(230, 230, 230);
-
 }
 
 .author {
@@ -72,7 +71,6 @@
 }
 
 .picture {
-  // width: 400px;
 
   img {
     width: 260px;
@@ -86,6 +84,9 @@
   position:relative;
 }
 
+
+// animation
+
 .picture a:nth-child(1) {
   position:absolute;
   -webkit-transition: opacity 2s ease-in-out;
@@ -98,4 +99,11 @@
   opacity:0;
 }
 
+.visible {
+  opacity: 1;
+  transition: 1s;
+}
 
+.invisible {
+  opacity: 0;
+}

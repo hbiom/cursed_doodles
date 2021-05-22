@@ -11,13 +11,13 @@
   </div>
 
 <div class="sections"></div>
-  <div class="text-intro">
+  <div class="text-intro invisible">
     <h2> You need to plan and event gathering a lot of more and less busy people and you dont know how to find a date
     for everybody ? </h2>
     <h2> That great !!</h2>
     <h2>  Well, do you need a date for : </h2>
   </div>
-  <div class="sub">
+  <div class="sub invisible">
     <div class="container">
       <div class="info">
         <div class="picture">
@@ -40,7 +40,7 @@
       </div>
     </div>
   </div>
-  <div class="sub">
+  <div class="sub invisible">
     <div class="container">
       <div class="info">
         <div class="left-t">
@@ -63,7 +63,7 @@
     </div>
   </div>
 
-  <div class="sub">
+  <div class="sub invisible">
     <div class="container">
       <div class="info">
         <div class="picture">
@@ -84,7 +84,7 @@
       </div>
     </div>
   </div>
-    <div class="text-intro">
+    <div class="text-intro invisible">
       <h2> Dont worry, we know what you're going through. <br>
     We can help you to predict what gonna happen ...
       <h1 class = "blackbutton margin">  <%= link_to "Try now", new_event_path %> </h1>
@@ -93,3 +93,39 @@
 
 <%= render 'shared/footer' %>
 
+
+
+<script>
+
+const threshold = .1
+const options = {
+  root: null,
+  rootMargin: '0px',
+  threshold
+}
+
+const handleIntersect = function (entries, observer) {
+  entries.forEach(function (entry) {
+    if (entry.intersectionRatio > threshold) {
+      entry.target.classList.remove('invisible')
+      entry.target.classList.add('visible')
+      observer.unobserve(entry.target)
+      console.log(entry)
+    }
+  })
+}
+
+
+document.documentElement.classList.add('reveal-loaded')
+
+window.addEventListener("DOMContentLoaded", function () {
+  const observer = new IntersectionObserver(handleIntersect, options)
+  const targets = document.querySelectorAll('.invisible')
+  targets.forEach(function (target) {
+    observer.observe(target)
+  })
+})
+
+
+
+</script>
