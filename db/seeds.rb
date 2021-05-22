@@ -33,11 +33,11 @@ thesis = Event.create!(name: 'Thesis soutenance',
                       note: thesis_text,
                       start_time: dates)
 
-emilie = User.create!(name:'emilie', role: 'Organisator', event_id: thesis.id)
-newton = User.create!(name:'newton', role: 'Dr', event_id: thesis.id)
-pasteur = User.create!(name:'pasteur', role: 'Pr', event_id: thesis.id)
-curie = User.create!(name:'curie', role: 'Présidente', event_id: thesis.id)
-pascal = User.create!(name:'pascal', role: 'directeur de thése', event_id: thesis.id)
+emilie = User.create!(name:'Emilie', role: 'Organisator', event_id: thesis.id)
+newton = User.create!(name:'Newton', role: 'Dr', event_id: thesis.id)
+pasteur = User.create!(name:'Pasteur', role: 'Pr', event_id: thesis.id)
+curie = User.create!(name:'Curie', role: 'Présidente', event_id: thesis.id)
+pascal = User.create!(name:'Pascal', role: 'directeur de thése', event_id: thesis.id)
 
 comitee = [emilie, newton, pasteur, curie, pascal]
 
@@ -73,12 +73,12 @@ weeding = Event.create!(name: 'Wedding',
                         note: weeding_text,
                         start_time: dates)
 
-marie = User.create!(name:'marie', role: 'Organisator', event_id: weeding.id)
-juliette = User.create!(name:'juliette', role: 'bestie', event_id: weeding.id)
-tata_jeannine = User.create!(name:'tata jeannine', role: 'aunt', event_id: weeding.id)
-tata_huguette = User.create!(name:'tata huguette', role: 'aunt', event_id: weeding.id)
-marie = User.create!(name:'Marie', role: 'mun', event_id: weeding.id)
-tonton_yves = User.create!(name:'oncle', role: 'directeur de thése', event_id: weeding.id)
+marie = User.create!(name:'Marie', role: 'Organisator', event_id: weeding.id)
+juliette = User.create!(name:'Juliette', role: 'bestie', event_id: weeding.id)
+tata_jeannine = User.create!(name:'Aunt jeannine', role: 'aunt', event_id: weeding.id)
+tata_huguette = User.create!(name:'Aunt huguette', role: 'aunt', event_id: weeding.id)
+marie = User.create!(name:'Marie', role: 'Mun', event_id: weeding.id)
+yves = User.create!(name:'Yves', role: 'Distant cousin', event_id: weeding.id)
 
 family_co = [marie, juliette, tata_jeannine, tata_huguette, marie, tonton_yves]
 
@@ -90,7 +90,6 @@ dates = []
   dates << today.strftime("%B %d %Y")
 end
 dates = dates * ","
-
 
 job_text = 'Dear all, I wish to ask you for a meeting about the new job position I\'m looking for our department.
 Please indicate your disponibilities so we can find a common date shortly.
