@@ -1,5 +1,4 @@
 const scrollAnimation = () => {
-  console.log("scrollAnimation")
 
   const threshold = .1
   const options = {
@@ -14,7 +13,6 @@ const scrollAnimation = () => {
         entry.target.classList.remove('invisible')
         entry.target.classList.add('visible')
         observer.unobserve(entry.target)
-        console.log(entry)
       }
     })
   }
