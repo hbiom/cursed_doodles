@@ -1,34 +1,36 @@
-<div class = "edt">
-  <h1> <%= @event.name.capitalize() %> </h1>
-  <div class = "edt-header">
-    <p> by <%=@event.users.first.name %> </p> <p> <i class="fas fa-circle" style="color:gray;font-size:10px"> </span> </i></p>
-    <p> <%= ((Time.now - @event.created_at )/6000).round() %> mins ago<p> <i class="fas fa-circle" style="color:gray;font-size:10px"> </span> </i></p>
-    <p> <%= "Print" %></p>
-  </div>
-  <div class = "edt-info">
-    <div class="edt-info-container">
-      <p> <i class="fas fa-map-marker" style="color:gray"></i> </p> <p> <%= @event.place %></p>
+<div class="container">
+  <div class = "edt">
+    <h1> <%= @event.name.capitalize() %> </h1>
+    <div class = "edt-header">
+      <p> by <%=@event.users.first.name %> </p> <p> <i class="fas fa-circle" style="color:gray;font-size:10px"> </span> </i></p>
+      <p> <%= ((Time.now - @event.created_at )/6000).round() %> mins ago<p> <i class="fas fa-circle" style="color:gray;font-size:10px"> </span> </i></p>
+      <p> <%= "Print" %></p>
     </div>
+    <div class = "edt-info">
+      <div class="edt-info-container">
+        <p> <i class="fas fa-map-marker" style="color:gray"></i> </p> <p> <%= @event.place %></p>
+      </div>
 
-   <div class="edt-info-container">
-      <p> <i class="fas fa-align-justify" style="color:gray"></i> </p>
-      <div class="limit">
-        <p> <%= @event.note %> </p>
+     <div class="edt-info-container">
+        <p> <i class="fas fa-align-justify" style="color:gray"></i> </p>
+        <div class="limit">
+          <p> <%= @event.note %> </p>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="tabs">
-    <%= link_to "Table", event_path(@event), class: "blue_link" %>
-    <%= link_to "Calendar", calendar_path(@event), class: "link" %>
-  </div>
-    <%= render "table" %>
-  <div class="edt-info edt-diplay ">
-    <div>
-      <%= link_to "Invite an user", new_event_user_path(@event), class: "buttonval"  %>
+    <div class="tabs">
+      <%= link_to "Table", event_path(@event), class: "blue_link" %>
+      <%= link_to "Calendar", calendar_path(@event), class: "link" %>
     </div>
-    <div>
-      <%= link_to "Home", root_path, class: "back"  %>
+    <%= render "table" %>
+    <div class="edt-info edt-diplay ">
+      <div>
+        <%= link_to "Invite an user", new_event_user_path(@event), class: "buttonval"  %>
+      </div>
+      <div>
+        <%= link_to "Home", root_path, class: "back"  %>
+      </div>
     </div>
   </div>
 </div>
