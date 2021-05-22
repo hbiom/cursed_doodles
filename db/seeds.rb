@@ -29,9 +29,9 @@ dates = []
 end
 dates = dates * ","
 
-thesis_text = "Hello, dear thesis commitee, please indicate your disponibility for my thesis soutenance below. I know you are all
-very busy and sollicitated all around the world, but I really hope we find a common date soon.
-cordially."
+thesis_text = "Hello, dear thesis commitee, please indicate your disponibility for my thesis soutenance below.\n
+I know you are all very busy and sollicitated all around the world, but I really hope we find a common date soon.\n
+Cordially."
 
 thesis = Event.create!(name: 'Thesis soutenance',
                       place: 'Paris',
