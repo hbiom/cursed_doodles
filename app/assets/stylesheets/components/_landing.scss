@@ -80,8 +80,8 @@
 .picture {
 
   img {
-    width: 400px;
-    height: 320px;
+    width: 350px;
+    height: 280px;
     background-repeat: no-repeat;
     background-size: cover;
   }
@@ -93,7 +93,6 @@
 
 
 // animation
-
 .picture a:nth-child(1) {
   position:absolute;
   -webkit-transition: opacity 2s ease-in-out;
