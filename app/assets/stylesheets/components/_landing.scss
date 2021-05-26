@@ -37,6 +37,8 @@
 
 .sub {
   width: 100%;
+  min-height: 400px;
+  height: auto;
   padding: 20px 0;
   background-color: #f8f8f8;
   margin-right: auto;
@@ -53,11 +55,15 @@
 }
 
 .rigth-t{
-  margin-left: 50px;
+  // margin-left: 50px;
+  padding-left: 30px;
+
 }
 
 .left-t{
-  margin-right: 50px;
+  // margin-right: 50px;
+  padding-right: 30px;
+
 }
 
 .sub:nth-child(odd) {
@@ -78,19 +84,21 @@
 }
 
 .picture {
+  margin: 20px;
+  // width: 80%;
+  // width: 100%;
+  // height: 100%;
 
   img {
     width: 350px;
-    height: 280px;
-    background-repeat: no-repeat;
-    background-size: cover;
+    height: 280px;    // height: 100%;
+    // object-fit: cover;
+    // // max-width: 500px;
+    // // max-height: 330px;
+    // background-repeat: no-repeat;
+    // background-size: cover;
   }
 }
-
-.picture {
-  position:relative;
-}
-
 
 // animation
 .picture a:nth-child(1) {
@@ -112,4 +120,16 @@
 
 .invisible {
   opacity: 0;
+}
+
+
+@media screen and (max-width: 400px){
+  .picture img {
+    width: 240px;
+    height: 170px;
+  }
+
+  .picture {
+    margin: auto;
+  }
 }

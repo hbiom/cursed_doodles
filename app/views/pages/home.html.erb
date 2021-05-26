@@ -10,26 +10,25 @@
     </div>
   </div>
 
-<div class="sections"></div>
+<!-- <div class="sections"></div>
+ -->
   <div class="text-intro invisible">
     <h2> You need to plan and event gathering a lot of more and less busy people and you dont know how to find a date
     for everybody ? </h2>
     <h2> That great !!</h2>
     <h2>  Well, do you need a date for : </h2>
   </div>
+
   <div class="sub invisible">
     <div class="container">
       <div class="info">
         <div class="picture">
-
           <%= link_to event_path(@thesis) do %>
             <%= image_tag("student.jpg", alt: 'Logo')%>
           <% end %>
-
           <%= link_to event_path(@thesis) do %>
             <%= image_tag("thesis_schedule.jpg", alt: 'Logo') %>
           <% end %>
-
         </div>
         <div class="rigth-t">
           <h3> Your <span>thesis soutenance</span> ?</h3>
@@ -40,6 +39,7 @@
       </div>
     </div>
   </div>
+
   <div class="sub invisible">
     <div class="container">
       <div class="info">
@@ -53,11 +53,9 @@
          <%= link_to event_path(@wedding) do %>
             <%= image_tag("wedding.jpg", alt: 'Logo')%>
           <% end %>
-
           <%= link_to event_path(@wedding) do %>
             <%= image_tag("wedding_schedule.jpg", alt: 'Logo')%>
           <% end %>
-
         </div>
       </div>
     </div>
@@ -70,7 +68,6 @@
          <%= link_to event_path(@meeting) do %>
             <%= image_tag("employe.jpg", alt: 'Logo')%>
           <% end %>
-
           <%= link_to event_path(@meeting) do %>
             <%= image_tag("boss_schedule.jpg", alt: 'Logo')%>
           <% end %>
@@ -84,11 +81,12 @@
       </div>
     </div>
   </div>
-    <div class="text-intro invisible">
-      <h2> Dont worry, we know what you're going through. <br>
-    We can help you to predict what gonna happen ...
-      <h1 class = "blackbutton margin">  <%= link_to "Try now!", new_event_path %> </h1>
-    </div>
+
+  <div class="text-intro invisible">
+    <h2> Dont worry, we know what you're going through. <br>
+  We can help you to predict what gonna happen ...
+    <h1 class = "blackbutton margin">  <%= link_to "Try now!", new_event_path %> </h1>
+  </div>
 </div>
 
 <%= render 'shared/footer' %>
