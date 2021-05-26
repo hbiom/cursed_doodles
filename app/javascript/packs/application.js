@@ -28,6 +28,8 @@ import { flatpickr_user } from '../components/flatpickr_event_date';
 
 import { scrollAnimation } from '../components/scrollAnimation';
 
+import { animateValue } from '../components/animateKpi';
+
 
 document.addEventListener('turbolinks:load', () => {
   // Call your JS functions here
@@ -37,5 +39,5 @@ document.addEventListener('turbolinks:load', () => {
   flatpickr_event()
   flatpickr_user()
   scrollAnimation()
-  // empty()
+  animateValue(0, 2000);  // empty()
 });
