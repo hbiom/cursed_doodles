@@ -5,8 +5,9 @@
 
 .form {
   display: inline-block;
-  width: 640px;
+  width: 100%;
 }
+
 
 .form-container {
   padding: 10px 0px;
@@ -14,11 +15,12 @@
 
   div {
     padding-left: 15px;
+    width: 100%;
   }
 
   input {
     padding: 15px;
-    width: 600px;
+    width: 100%;
     border: none;
     border-bottom: 1px solid gray;
     height: 0px;
@@ -31,11 +33,12 @@
 
   div {
     padding-left: 15px;
+    width: 100%;
   }
 
   textarea {
     padding: 15px;
-    width: 600px;
+    width: 100%;
     border: none;
     border: 1px solid gray;
   }

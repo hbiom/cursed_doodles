@@ -4,7 +4,6 @@
     <title>CursedDoodles</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
 
@@ -33,15 +32,10 @@
     <meta name="twitter:description" content="<%= meta_description %>">
     <meta name="twitter:creator" content="<%= DEFAULT_META["twitter_account"] %>">
     <meta name="twitter:image:src" content="<%= meta_image %>">
-
   </head>
 
   <body>
-  <% if params[:controller] == "home" %>
-    <div class="container">
-  <% end %>
   <%= yield %>
-    </div>
   </body>
 </html>
 
