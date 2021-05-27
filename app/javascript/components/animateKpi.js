@@ -26,17 +26,12 @@ function scrollAnimateValue() {
       var scroll_pos_test = element_position;
 
       if(y_scroll_pos > scroll_pos_test) {
-        console.log("hzefblfebfelk")
         var kpiValue = document.querySelectorAll('span.kpi-value');
         animateValue(0, 2000);
         $(window).off("scroll");
       }
   });
 };
-
-
-
-
 
 
 
