@@ -1,4 +1,5 @@
 function animateValue(start, duration) {
+
   let startTimestamp = null;
   var kpiValue = document.querySelectorAll('span.kpi-value');
   kpiValue.forEach(element=> {
@@ -13,7 +14,30 @@ function animateValue(start, duration) {
     };
   window.requestAnimationFrame(step);
   })
-}
+};
 
 
-export { animateValue };
+
+function scrollAnimateValue() {
+  var element_position = $('.kpi-section').offset().top -1200;
+
+  $(window).on('scroll', function() {
+      var y_scroll_pos = window.pageYOffset;
+      var scroll_pos_test = element_position;
+
+      if(y_scroll_pos > scroll_pos_test) {
+        console.log("hzefblfebfelk")
+        var kpiValue = document.querySelectorAll('span.kpi-value');
+        animateValue(0, 2000);
+        $(window).off("scroll");
+      }
+  });
+};
+
+
+
+
+
+
+
+export { scrollAnimateValue };
