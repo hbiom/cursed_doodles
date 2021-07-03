@@ -8,6 +8,13 @@
     margin-left: auto;
 }
 
+.size-screen {
+  height: calc(100vh - 112px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .page-content {
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 5px;
@@ -15,7 +22,7 @@
   max-width: 800px;
   width: 100%;
   height: auto;
-  margin: 50px auto;
+  margin: auto;
   padding: 25px;
   background-color: white;
 }
