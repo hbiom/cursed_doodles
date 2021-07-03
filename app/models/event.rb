@@ -1,21 +1,9 @@
 class Event < ApplicationRecord
   has_many :users
 
-
-  #has_many :start_time
-
   attr_writer :current_step
 
   validates :start_time, presence: true
-  # validates :ending_at,  presence: true
-
-  # def start_event
-  #   Date.new(self.start_time.strftime("%y").to_i , self.start_time.strftime("%m").to_i , self.start_time.strftime("%d").to_i)
-  # end
-
-  # def end_event
-  #   Date.new(self.ending_at.strftime("%y").to_i , self.ending_at.strftime("%m").to_i , self.ending_at.strftime("%d").to_i)
-  # end
 
   def start_event
     self.start_time.split(',').map(&:to_date)
@@ -25,7 +13,6 @@ class Event < ApplicationRecord
     date_array = self.start_time.split(',').map(&:to_date)
     return date_array.min..date_array.max
   end
-
 
   def date_pick
     dates = []
@@ -56,7 +43,6 @@ class Event < ApplicationRecord
     dates_event = self.participants
     dates = []
     dates_event.each do |date, number_participant|
-
       if self.number_user == 2
         if [true, true, false].sample
           dates << date
