@@ -19,18 +19,22 @@ function animateValue(start, duration) {
 
 
 function scrollAnimateValue() {
-  var element_position = $('.kpi-section').offset().top -1200;
+  var kpi = document.querySelector('.kpi-section');
 
-  $(window).on('scroll', function() {
-      var y_scroll_pos = window.pageYOffset;
-      var scroll_pos_test = element_position;
+  if (kpi) {
+    var element_position = $('.kpi-section').offset().top -1200;
 
-      if(y_scroll_pos > scroll_pos_test) {
-        var kpiValue = document.querySelectorAll('span.kpi-value');
-        animateValue(0, 2000);
-        $(window).off("scroll");
-      }
-  });
+    $(window).on('scroll', function() {
+        var y_scroll_pos = window.pageYOffset;
+        var scroll_pos_test = element_position;
+
+        if(y_scroll_pos > scroll_pos_test) {
+          var kpiValue = document.querySelectorAll('span.kpi-value');
+          animateValue(0, 2000);
+          $(window).off("scroll");
+        }
+    });
+  }
 };
 
 

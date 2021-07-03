@@ -18,13 +18,14 @@ Disponibilities for each invited user will be automaticaly created but no common
 
 ***Gem :***
 
-bootstrap
-flatpickr
-flatpickr_rails
-font-awesome-rails
-simple_form
+- bootstrap
+- flatpickr
+- flatpickr_rails
+- font-awesome-rails
+- simple_form
 
 ***JS API:***
 
-Intersection Observer API
+- Intersection
+- Observer API
 
