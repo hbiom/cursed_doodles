@@ -5,7 +5,7 @@
 Deploy on heroku [Here](https://cursed-doodle.herokuapp.com/)
 
 <p align="center">
-  <img src=https://github.com/hbiom/cursed_doodles/blob/master/app/assets/images/readme.png>
+  <img src=https://github.com/hbiom/cursed_doodles/blob/master/app/assets/images/readme.jpg>
 </p>
 
 #### Functionality
